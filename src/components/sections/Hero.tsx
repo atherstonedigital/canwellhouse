@@ -66,12 +66,12 @@ export default function Hero() {
 
           <div className="hidden items-center justify-center lg:flex">
             <Image
-              src="/brand/canwell-house-logo.png"
+              src="/brand/Canwellhouse logo sq gold.png"
               alt="Canwell House"
-              width={660}
-              height={660}
+              width={2000}
+              height={2000}
               priority
-              className="w-full max-w-[330px]"
+              className="h-auto w-full max-w-[330px]"
             />
           </div>
         </div>
