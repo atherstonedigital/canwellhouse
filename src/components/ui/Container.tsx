@@ -9,7 +9,7 @@ export default function Container({
 }) {
   return (
     <div
-      className={`mx-auto w-full max-w-[1280px] ${className}`}
+      className={`mx-auto w-full max-w-[1240px] ${className}`}
       style={{ paddingInline: "var(--gutter)" }}
     >
       {children}

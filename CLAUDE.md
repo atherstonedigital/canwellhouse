@@ -14,13 +14,13 @@ Corporate-premium-investor. Measured, declarative, understated confidence, third
 ## Stack
 Next.js 15 (App Router) · Tailwind v4 · Decap CMS · Netlify · GitHub · GA4.
 
-## Brand tokens (locked)
-- Ink (near-black): #1B1A18
-- Stone (ground): #F4F1EC
-- Brass (accent): #B08D57
-- Display: Fraunces (wordmark cut Fraunces 72pt Light; monogram cut Fraunces 72pt Soft SemiBold)
-- Body/UI: Inter
-Assets live in `brand/` (`src/` master SVGs, `dist/` exports, `fonts/` Fraunces .ttf).
+## Brand tokens (locked — from the redesigned logo)
+- Petrol (primary dark ground): #253336
+- Petrol deep (footer / depth): #1B2528
+- Gold (accent only — hairlines, eyebrows, numerals, button edges): #C6974E
+- Stone (light contrast ground + text on dark): #F4F1EC
+- Display: Fraunces. Body/UI: Inter.
+- Descriptor line: Interiors | Design | Retail
 
 ## Non-negotiables (fail silently in production if skipped)
 - Validated schema types only; validate every block before shipping.
