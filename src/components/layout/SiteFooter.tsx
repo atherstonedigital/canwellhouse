@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 
@@ -10,15 +11,16 @@ export default function SiteFooter() {
           style={{ background: "color-mix(in srgb, var(--color-gold) 40%, transparent)" }}
         />
         <Container>
-          <p
-            className="font-display text-lg font-normal"
-            style={{ letterSpacing: "0.22em", color: "var(--on-dark)" }}
-          >
-            CANWELL HOUSE
-          </p>
+          <Image
+            src="/brand/Canwellhouse logo long white.png"
+            alt="Canwell House"
+            width={4128}
+            height={1024}
+            className="h-6 w-auto opacity-80 sm:h-8"
+          />
 
           <p
-            className="mt-3 text-sm"
+            className="mt-4 text-sm"
             style={{ letterSpacing: "0.18em", color: "var(--color-gold)" }}
           >
             Interiors | Design | Retail
