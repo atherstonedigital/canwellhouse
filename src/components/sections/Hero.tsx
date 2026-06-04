@@ -1,17 +1,65 @@
+import Container from "@/components/ui/Container";
+
 export default function Hero() {
   return (
-    <section className="px-6 pb-16 pt-20 sm:px-10 sm:pb-24 sm:pt-28">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="font-display text-4xl font-light leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          One group behind three interiors businesses.
-        </h1>
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink/75 sm:text-xl">
-          Canwell House is the parent company of Canwell Interiors, Saverys and
-          Xshowhome. Each brand trades under its own name. The group provides
-          the structure behind them.
-        </p>
-        <div className="mt-12 h-px w-full bg-brass" />
-      </div>
+    <section
+      className="relative overflow-hidden"
+      style={{ paddingBlock: "var(--section-y)" }}
+    >
+      {/* Faint portal-frame mark as atmosphere */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/brand/mark.svg"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-[5%] top-[8%] h-[50vh] w-auto select-none opacity-[0.07]"
+      />
+
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-9">
+            <p
+              className="reveal-hero text-[length:var(--text-eyebrow)] font-medium uppercase tracking-[0.16em]"
+              style={{ color: "var(--ink-muted)" }}
+            >
+              Group
+            </p>
+
+            <h1
+              className="reveal-hero mt-6 font-display font-light leading-[1.04] tracking-[-0.015em]"
+              style={{
+                fontSize: "var(--text-display)",
+                textWrap: "balance",
+                animationDelay: "60ms",
+              }}
+            >
+              One group behind three interiors businesses.
+            </h1>
+
+            <p
+              className="reveal-hero mt-8 leading-[1.55]"
+              style={{
+                fontSize: "var(--text-lead)",
+                maxWidth: "var(--measure)",
+                color: "var(--ink-muted)",
+                animationDelay: "120ms",
+              }}
+            >
+              Canwell House is the parent company of Canwell Interiors, Saverys
+              and Xshowhome. Each brand trades under its own name. The group
+              provides the structure behind them.
+            </p>
+
+            <div
+              className="reveal-hero mt-12 h-px w-full"
+              style={{
+                background: "var(--rule-brass)",
+                animationDelay: "180ms",
+              }}
+            />
+          </div>
+        </div>
+      </Container>
 
       {/* hero image: pending group photography */}
     </section>

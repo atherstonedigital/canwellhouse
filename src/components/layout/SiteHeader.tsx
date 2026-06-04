@@ -1,10 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/ui/Container";
 
 export default function SiteHeader() {
   return (
-    <header className="px-6 py-6 sm:px-10 sm:py-8">
-      <div className="mx-auto flex max-w-5xl items-center justify-between">
+    <header
+      className="relative"
+      style={{ paddingBlock: "var(--gutter)" }}
+    >
+      <Container className="flex items-center justify-between">
         <Link href="/" aria-label="Canwell House home">
           <Image
             src="/brand/lockup-horizontal.svg"
@@ -17,11 +21,16 @@ export default function SiteHeader() {
         </Link>
         <a
           href="#enquiries"
-          className="font-body text-sm tracking-wide text-ink/70 transition-colors hover:text-ink"
+          className="text-sm tracking-[0.12em] uppercase transition-colors duration-200"
+          style={{ color: "var(--ink-muted)" }}
         >
           Enquiries
         </a>
-      </div>
+      </Container>
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: "var(--rule-brass)" }}
+      />
     </header>
   );
 }
