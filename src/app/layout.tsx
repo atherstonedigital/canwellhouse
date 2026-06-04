@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   ),
   title: "Canwell House",
   description:
-    "Canwell House is the parent company of Canwell Interiors, Saverys and Xshowhome.",
+    "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

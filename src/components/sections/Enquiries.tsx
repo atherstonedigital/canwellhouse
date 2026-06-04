@@ -36,8 +36,9 @@ export default function Enquiries() {
                 color: "var(--ink-muted)",
               }}
             >
-              For investment, partnership or press enquiries, contact the group
-              directly.
+              Canwell House works with investors and partners seeking exposure
+              to a diversified interiors group. For investment, partnership or
+              press enquiries, contact the group directly.
             </p>
 
             <a

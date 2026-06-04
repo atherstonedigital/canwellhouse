@@ -17,6 +17,7 @@ export default function SiteFooter() {
           style={{ background: "color-mix(in srgb, var(--color-stone) 15%, transparent)" }}
         />
         <div className="mt-8 space-y-2 text-sm" style={{ color: "color-mix(in srgb, var(--color-stone) 50%, transparent)" }}>
+          <p>Canwell House Ltd is the parent company of Xshowhome, Canwell Interiors and Saverys.</p>
           <p>studio@canwellhouse.com</p>
           <p>&copy; 2026 Canwell House</p>
         </div>

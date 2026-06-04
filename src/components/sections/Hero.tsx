@@ -33,7 +33,7 @@ export default function Hero() {
                 animationDelay: "60ms",
               }}
             >
-              One group behind three interiors businesses.
+              One group of interiors brands, from £20 to £250,000.
             </h1>
 
             <p
@@ -45,9 +45,10 @@ export default function Hero() {
                 animationDelay: "120ms",
               }}
             >
-              Canwell House is the parent company of Canwell Interiors, Saverys
-              and Xshowhome. Each brand trades under its own name. The group
-              provides the structure behind them.
+              Canwell House is the parent company of three interiors
+              businesses: Xshowhome, Canwell Interiors and Saverys. Between
+              them they serve the market from a £20 accessory to a £250,000
+              commercial scheme.
             </p>
 
             <div

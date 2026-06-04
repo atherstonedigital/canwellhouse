@@ -7,27 +7,30 @@ import { useScrollReveal } from "@/lib/useReveal";
 const brands = [
   {
     index: "01",
-    name: "Canwell Interiors",
-    logo: "/brand/canwell-interiors-horizontal.png",
-    logoWidth: 802,
-    logoHeight: 131,
-    descriptor: "The operating company at the centre of the group.",
-  },
-  {
-    index: "02",
-    name: "Saverys",
-    logo: "/brand/saverys.png",
-    logoWidth: 500,
-    logoHeight: 250,
-    descriptor: "A design practice.",
-  },
-  {
-    index: "03",
     name: "Xshowhome",
     logo: "/brand/xshowhome-horizontal.png",
     logoWidth: 4128,
     logoHeight: 1024,
-    descriptor: "A retail brand.",
+    descriptor:
+      "The growth engine. A direct-to-consumer furniture brand selling nationally online and through its Buzzard Valley showroom. Ex-showhome pieces and premium new stock at exceptional value, rated 4.9 out of 5 across more than 120 reviews.",
+  },
+  {
+    index: "02",
+    name: "Canwell Interiors",
+    logo: "/brand/canwell-interiors-horizontal.png",
+    logoWidth: 802,
+    logoHeight: 131,
+    descriptor:
+      "The premium retail showroom. A curated whole-home furnishings showroom at the Cotswold Design Centre in Broadway, open seven days, with in-person design help and a considered, premium selection.",
+  },
+  {
+    index: "03",
+    name: "Saverys",
+    logo: "/brand/saverys.png",
+    logoWidth: 500,
+    logoHeight: 250,
+    descriptor:
+      "The high end. A luxury interior design studio established in 1942, with studios in Broadway, Ludlow and Chelsea. In-house hand upholstery and bespoke furniture manufacture for private residences and luxury hotels.",
   },
 ];
 
@@ -60,21 +63,32 @@ export default function Group() {
               className="mt-6 font-display font-light tracking-tight"
               style={{ fontSize: "var(--text-h2)" }}
             >
-              The group
+              Three businesses, one structure.
             </h2>
 
-            <p
-              className="mt-6 leading-[1.55]"
+            <div
+              className="mt-6 space-y-4 leading-[1.55]"
               style={{
                 fontSize: "var(--text-lead)",
                 maxWidth: "var(--measure)",
                 color: "var(--ink-muted)",
               }}
             >
-              Canwell House brings three established businesses under single
-              ownership. Each keeps its own identity, customers and team. The
-              group sets direction and standards across them.
-            </p>
+              <p>
+                Canwell House builds and owns interiors brands that reach
+                different customers at different price points. Xshowhome sells
+                nationally online and through its showroom at exceptional value.
+                Canwell Interiors is the premium retail showroom, curated and in
+                person. Saverys designs and makes at the high end, with its own
+                upholstery and bespoke workshops.
+              </p>
+              <p>
+                Each brand is strong on its own. Held together, they cover more
+                of the market than any one of them could alone. The group owns
+                its design and manufacturing capability and runs its own
+                ecommerce and delivery, so margin and expertise stay in-house.
+              </p>
+            </div>
           </div>
         </div>
 
