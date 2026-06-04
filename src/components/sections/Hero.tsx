@@ -11,7 +11,7 @@ export default function Hero() {
       <Container>
         <div
           className="grid grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr]"
-          style={{ gap: "clamp(2rem, 5vw, 5rem)" }}
+          style={{ gap: "clamp(2.5rem, 5vw, 5rem)" }}
         >
           <div>
             <div className="reveal-hero">
@@ -27,9 +27,7 @@ export default function Hero() {
                 animationDelay: "60ms",
               }}
             >
-              One group of interiors brands, from{" "}
-              <span style={{ color: "var(--color-gold)" }}>£20</span> to{" "}
-              <span style={{ color: "var(--color-gold)" }}>£250,000</span>.
+              From a single piece to a finished space.
             </h1>
 
             <div
@@ -64,15 +62,22 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hidden items-center justify-center lg:flex">
-            <Image
-              src="/brand/Canwellhouse logo sq gold.png"
-              alt="Canwell House"
-              width={2000}
-              height={2000}
-              priority
-              className="h-auto w-full max-w-[330px]"
-            />
+          <div className="reveal-hero" style={{ animationDelay: "120ms" }}>
+            <div
+              className="relative aspect-[16/10] w-full overflow-hidden lg:aspect-[4/3]"
+              style={{
+                border: "1px solid color-mix(in srgb, var(--color-gold) 35%, transparent)",
+              }}
+            >
+              <Image
+                src="/brand/canwellhouse heroimage .webp"
+                alt="A furnished interior by the Canwell House group"
+                fill
+                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </Container>
