@@ -115,20 +115,24 @@ export default function Group() {
                 </>
               )}
 
-              <div className={i > 0 ? "sm:pl-8" : ""}>
+              <div
+                className={`${i > 0 ? "sm:pl-8" : ""} ${
+                  i < brands.length - 1 ? "sm:pr-8" : ""
+                }`}
+              >
                 <span
                   className="font-display text-sm"
                   style={{ color: "var(--ink-muted)" }}
                 >
                   {brand.index}
                 </span>
-                <div className="mt-4 flex h-14 items-center">
+                <div className="mt-4 flex h-9 items-center">
                   <Image
                     src={brand.logo}
                     alt={brand.name}
                     width={brand.logoWidth}
                     height={brand.logoHeight}
-                    className="h-auto max-h-full w-auto max-w-[180px] object-contain object-left"
+                    className="h-6 w-auto max-w-[160px] object-contain object-left"
                   />
                 </div>
                 <p

@@ -6,7 +6,7 @@ export default function SiteHeader() {
   return (
     <header
       className="relative"
-      style={{ paddingBlock: "var(--gutter)" }}
+      style={{ paddingBlock: "clamp(1.25rem, 2.5vw, 2rem)" }}
     >
       <Container className="flex items-center justify-between">
         <Link href="/" aria-label="Canwell House home">

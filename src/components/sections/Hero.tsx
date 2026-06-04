@@ -6,13 +6,13 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ paddingBlock: "var(--section-y)" }}
     >
-      {/* Faint portal-frame mark as atmosphere */}
+      {/* Faint portal-frame mark as atmosphere, contained in the right column */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/brand/mark.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -right-[5%] top-[8%] h-[50vh] w-auto select-none opacity-[0.07]"
+        className="pointer-events-none absolute right-[var(--gutter)] top-1/2 hidden aspect-square h-auto w-[clamp(14rem,22vw,22rem)] -translate-y-1/2 select-none opacity-[0.06] lg:block"
       />
 
       <Container>
