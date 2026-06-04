@@ -10,7 +10,7 @@ export default function SiteHeader() {
       <Container className="flex items-center justify-between">
         <Link href="/" aria-label="Canwell House home">
           <Image
-            src="/brand/Canwellhouse logo long gold.png"
+            src="/brand/Canwellhouse logo long white.png"
             alt="Canwell House"
             width={4128}
             height={1024}
