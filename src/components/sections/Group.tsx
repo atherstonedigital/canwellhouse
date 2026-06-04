@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { useScrollReveal } from "@/lib/useReveal";
 
@@ -7,16 +8,25 @@ const brands = [
   {
     index: "01",
     name: "Canwell Interiors",
+    logo: "/brand/canwell-interiors-horizontal.png",
+    logoWidth: 802,
+    logoHeight: 131,
     descriptor: "The operating company at the centre of the group.",
   },
   {
     index: "02",
     name: "Saverys",
+    logo: "/brand/saverys.png",
+    logoWidth: 500,
+    logoHeight: 250,
     descriptor: "A design practice.",
   },
   {
     index: "03",
     name: "Xshowhome",
+    logo: "/brand/xshowhome-horizontal.png",
+    logoWidth: 4128,
+    logoHeight: 1024,
     descriptor: "A retail brand.",
   },
 ];
@@ -98,14 +108,17 @@ export default function Group() {
                 >
                   {brand.index}
                 </span>
-                <h3
-                  className="mt-2 font-display font-medium tracking-tight"
-                  style={{ fontSize: "var(--text-h3)" }}
-                >
-                  {brand.name}
-                </h3>
+                <div className="mt-4 flex h-14 items-center">
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    width={brand.logoWidth}
+                    height={brand.logoHeight}
+                    className="h-auto max-h-full w-auto max-w-[180px] object-contain object-left"
+                  />
+                </div>
                 <p
-                  className="mt-2 text-base leading-relaxed"
+                  className="mt-4 text-base leading-relaxed"
                   style={{ color: "var(--ink-muted)" }}
                 >
                   {brand.descriptor}
