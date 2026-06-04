@@ -11,6 +11,7 @@ const brands = [
     index: "01",
     tier: "RETAIL · ONLINE",
     name: "Xshowhome",
+    url: "https://xshowhome.com/",
     logo: "/brand/xshowhome-horizontal.png",
     logoWidth: 4128,
     logoHeight: 1024,
@@ -22,6 +23,7 @@ const brands = [
     index: "02",
     tier: "PREMIUM RETAIL",
     name: "Canwell Interiors",
+    url: "https://canwellinteriors.com/",
     logo: "/brand/canwell-interiors-horizontal.png",
     logoWidth: 802,
     logoHeight: 131,
@@ -33,6 +35,7 @@ const brands = [
     index: "03",
     tier: "BESPOKE DESIGN",
     name: "Saverys",
+    url: "https://www.saverys.co.uk/",
     logo: "/brand/saverys.png",
     logoWidth: 500,
     logoHeight: 250,
@@ -67,7 +70,16 @@ export default function Brands() {
                   </>
                 )}
 
-                <div className={`${i > 0 ? "sm:pl-8" : ""} ${i < brands.length - 1 ? "sm:pr-8" : ""}`}>
+                <a
+                  href={brand.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${brand.name}`}
+                  className={`group block transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 ${
+                    i > 0 ? "sm:pl-8" : ""
+                  } ${i < brands.length - 1 ? "sm:pr-8" : ""}`}
+                  style={{ outlineColor: "var(--color-gold)" }}
+                >
                   <span
                     className="font-display text-lg"
                     style={{ color: "var(--color-gold)" }}
@@ -98,7 +110,20 @@ export default function Brands() {
                   >
                     {brand.descriptor}
                   </p>
-                </div>
+
+                  <span
+                    className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium uppercase"
+                    style={{ letterSpacing: "0.16em", color: "var(--on-light)" }}
+                  >
+                    Visit site
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover:translate-x-1"
+                    >
+                      &rarr;
+                    </span>
+                  </span>
+                </a>
               </div>
             ))}
           </div>
