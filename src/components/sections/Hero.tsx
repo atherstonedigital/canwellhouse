@@ -1,48 +1,51 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
+import Section from "@/components/ui/Section";
+import Eyebrow from "@/components/ui/Eyebrow";
+import Rule from "@/components/ui/Rule";
+import GoldButton from "@/components/ui/GoldButton";
 
 export default function Hero() {
   return (
-    <section
-      className="relative overflow-hidden"
-      style={{ paddingBlock: "var(--section-y)" }}
-    >
-      {/* Faint portal-frame mark as atmosphere, contained in the right column */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/brand/mark.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[var(--gutter)] top-1/2 hidden aspect-square h-auto w-[clamp(14rem,22vw,22rem)] -translate-y-1/2 select-none opacity-[0.06] lg:block"
-      />
-
+    <Section ground="petrol">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="lg:col-span-9">
-            <p
-              className="reveal-hero text-[length:var(--text-eyebrow)] font-medium uppercase tracking-[0.16em]"
-              style={{ color: "var(--ink-muted)" }}
-            >
-              Group
-            </p>
+        <div
+          className="grid grid-cols-1 items-center lg:grid-cols-[1.15fr_0.85fr]"
+          style={{ gap: "clamp(2rem, 5vw, 5rem)" }}
+        >
+          <div>
+            <div className="reveal-hero">
+              <Eyebrow>GROUP</Eyebrow>
+            </div>
 
             <h1
-              className="reveal-hero mt-6 font-display font-light leading-[1.04] tracking-[-0.015em]"
+              className="reveal-hero mt-6 font-light"
               style={{
                 fontSize: "var(--text-display)",
+                color: "var(--color-stone)",
                 textWrap: "balance",
                 animationDelay: "60ms",
               }}
             >
-              One group of interiors brands, from £20 to £250,000.
+              One group of interiors brands, from{" "}
+              <span style={{ color: "var(--color-gold)" }}>£20</span> to{" "}
+              <span style={{ color: "var(--color-gold)" }}>£250,000</span>.
             </h1>
+
+            <div
+              className="reveal-hero mt-10"
+              style={{ animationDelay: "120ms" }}
+            >
+              <Rule />
+            </div>
 
             <p
               className="reveal-hero mt-8 leading-[1.55]"
               style={{
                 fontSize: "var(--text-lead)",
                 maxWidth: "var(--measure)",
-                color: "var(--ink-muted)",
-                animationDelay: "120ms",
+                color: "var(--on-dark-muted)",
+                animationDelay: "180ms",
               }}
             >
               Canwell House is the parent company of three interiors
@@ -52,17 +55,27 @@ export default function Hero() {
             </p>
 
             <div
-              className="reveal-hero mt-12 h-px w-full"
-              style={{
-                background: "var(--rule-brass)",
-                animationDelay: "180ms",
-              }}
+              className="reveal-hero mt-10"
+              style={{ animationDelay: "240ms" }}
+            >
+              <GoldButton href="mailto:studio@canwellhouse.com">
+                Contact the group
+              </GoldButton>
+            </div>
+          </div>
+
+          <div className="hidden items-center justify-center lg:flex">
+            <Image
+              src="/brand/canwell-house-logo.png"
+              alt="Canwell House"
+              width={660}
+              height={660}
+              priority
+              className="w-full max-w-[330px]"
             />
           </div>
         </div>
       </Container>
-
-      {/* hero image: pending group photography */}
-    </section>
+    </Section>
   );
 }
