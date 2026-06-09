@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import GA4 from "@/components/analytics/GA4";
 
 const fraunces = localFont({
   src: [
@@ -55,7 +56,10 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <GA4 />
+      </body>
     </html>
   );
 }
