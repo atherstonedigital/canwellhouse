@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import OrganizationSchema from "@/components/seo/OrganizationSchema";
 import GA4 from "@/components/analytics/GA4";
 
 const fraunces = localFont({
@@ -34,6 +35,35 @@ export const metadata: Metadata = {
   title: "Canwell House",
   description:
     "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Canwell House",
+    title: "Canwell House",
+    description:
+      "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke.",
+    url: "/",
+    locale: "en_GB",
+    images: [
+      {
+        // JPG referenced for LinkedIn, which does not reliably render WebP.
+        url: "/og-canwellhouse-1200x630.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Canwell House",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Canwell House",
+    description:
+      "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke.",
+    images: ["/og-canwellhouse-1200x630.jpg"],
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -53,10 +83,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <OrganizationSchema />
         {children}
         <GA4 />
       </body>
