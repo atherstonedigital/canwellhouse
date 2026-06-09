@@ -1,21 +1,29 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 // Production-only allowlist. These are production hosts, never previews or localhost.
 // If the canonical host is the apex alone and www is unreachable, reduce to ["canwellhouse.com"].
 const PROD_HOSTNAMES = ["canwellhouse.com", "www.canwellhouse.com"];
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID;
 
-export default function GA4() {
-  const [enabled, setEnabled] = useState(false);
+// The host is fixed for the page's lifetime, so there are no external updates.
+const subscribe = () => () => {};
+const getClientSnapshot = () =>
+  Boolean(GA4_ID && PROD_HOSTNAMES.includes(window.location.hostname));
+const getServerSnapshot = () => false;
 
-  useEffect(() => {
-    if (GA4_ID && PROD_HOSTNAMES.includes(window.location.hostname)) {
-      setEnabled(true);
-    }
-  }, []);
+export default function GA4() {
+  // Server and first client paint render nothing (server snapshot is false);
+  // after hydration the client snapshot enables GA only on a production host.
+  // This keeps the mount-based gate without a hydration mismatch and without
+  // calling setState inside an effect.
+  const enabled = useSyncExternalStore(
+    subscribe,
+    getClientSnapshot,
+    getServerSnapshot
+  );
 
   if (!enabled) return null;
 

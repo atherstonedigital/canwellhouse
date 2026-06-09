@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form registration</title>
+  </head>
+  <body>
+    <!--
+      Static form so Netlify's build-time form detection registers "contact".
+      The live form is rendered by React; submissions are verified for
+      Turnstile in /api/contact and then forwarded here server-side.
+      Field names must match the body posted by the route handler.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="organisation" />
+      <input type="text" name="enquiry-type" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
