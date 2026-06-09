@@ -3,7 +3,7 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
-import GoldButton from "@/components/ui/GoldButton";
+import ContactForm from "@/components/ui/ContactForm";
 import { useScrollReveal } from "@/lib/useReveal";
 
 export default function Enquiries() {
@@ -35,11 +35,22 @@ export default function Enquiries() {
             press enquiries, contact the group directly.
           </p>
 
-          <div className="mt-10">
-            <GoldButton href="mailto:studio@canwellhouse.com">
-              Contact the group
-            </GoldButton>
-          </div>
+          <ContactForm />
+
+          <p
+            className="mt-8 text-sm leading-[1.55]"
+            style={{ color: "var(--on-dark-muted)" }}
+          >
+            Or email the group directly at{" "}
+            <a
+              href="mailto:studio@canwellhouse.com"
+              className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ color: "var(--color-gold)", outlineColor: "var(--color-gold)" }}
+            >
+              studio@canwellhouse.com
+            </a>
+            .
+          </p>
         </div>
       </Container>
     </Section>
