@@ -15,10 +15,10 @@ export default function SiteFooter() {
         />
         <Container>
           <Image
-            src="/brand/Canwellhouse logo long white.png"
-            alt="Canwell House"
-            width={4128}
-            height={1024}
+            src={settings.logo.src}
+            alt={settings.logo.alt}
+            width={settings.logo.width}
+            height={settings.logo.height}
             className="h-6 w-auto opacity-80 sm:h-8"
           />
 

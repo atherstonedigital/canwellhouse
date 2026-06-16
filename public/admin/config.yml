@@ -30,6 +30,7 @@ collections:
               - { label: Body, name: body, widget: text }
               - { label: Button label, name: ctaLabel, widget: string }
               - { label: Button link, name: ctaHref, widget: string, hint: "Use mailto: for an email link" }
+              - { label: Background image, name: image, widget: image }
           - label: The Group
             name: group
             widget: object
@@ -57,6 +58,25 @@ collections:
               - { label: Eyebrow, name: eyebrow, widget: string }
               - { label: Heading, name: heading, widget: string }
               - { label: Body, name: body, widget: text }
+              - { label: Email intro line, name: emailIntro, widget: string, hint: "Text before the email address, e.g. 'Or email the group directly at'" }
+              - label: Contact form
+                name: form
+                widget: object
+                fields:
+                  - { label: Name field label, name: nameLabel, widget: string }
+                  - { label: Email field label, name: emailLabel, widget: string }
+                  - { label: Organisation field label, name: organisationLabel, widget: string }
+                  - { label: Enquiry type field label, name: enquiryTypeLabel, widget: string }
+                  - label: Enquiry type options
+                    name: enquiryTypes
+                    widget: list
+                    field: { label: Option, name: option, widget: string }
+                  - { label: Message field label, name: messageLabel, widget: string }
+                  - { label: Submit button label, name: submitLabel, widget: string }
+                  - { label: Submitting button label, name: submittingLabel, widget: string }
+                  - { label: Verification error, name: verificationError, widget: string }
+                  - { label: Success heading, name: successHeading, widget: string }
+                  - { label: Success body, name: successBody, widget: text }
 
   - name: brands
     label: Brands
@@ -91,6 +111,15 @@ collections:
         file: content/settings.json
         fields:
           - { label: Contact email, name: contactEmail, widget: string }
+          - label: Logo
+            name: logo
+            widget: object
+            hint: "Shown in the header and footer. Keep width and height matched to the image's real pixel dimensions."
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt text, name: alt, widget: string }
+              - { label: Width (px), name: width, widget: number, value_type: int }
+              - { label: Height (px), name: height, widget: number, value_type: int }
           - label: Header
             name: header
             widget: object
