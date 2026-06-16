@@ -5,21 +5,24 @@ import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
 import ContactForm from "@/components/ui/ContactForm";
 import { useScrollReveal } from "@/lib/useReveal";
+import { home, settings } from "@/lib/content";
 
 export default function Enquiries() {
   const sectionRef = useScrollReveal<HTMLDivElement>();
+  const { enquiries } = home;
+  const { contactEmail } = settings;
 
   return (
     <Section ground="petrol" id="enquiries">
       <Container>
         <div ref={sectionRef} className="reveal-scroll">
-          <Eyebrow>ENQUIRIES</Eyebrow>
+          <Eyebrow>{enquiries.eyebrow}</Eyebrow>
 
           <h2
             className="mt-6 font-light"
             style={{ fontSize: "var(--text-h2)", color: "var(--color-stone)" }}
           >
-            Enquiries
+            {enquiries.heading}
           </h2>
 
           <p
@@ -30,9 +33,7 @@ export default function Enquiries() {
               color: "var(--on-dark-muted)",
             }}
           >
-            Canwell House works with investors and partners seeking exposure
-            to a diversified interiors group. For investment, partnership or
-            press enquiries, contact the group directly.
+            {enquiries.body}
           </p>
 
           <ContactForm />
@@ -43,11 +44,11 @@ export default function Enquiries() {
           >
             Or email the group directly at{" "}
             <a
-              href="mailto:studio@canwellhouse.com"
+              href={`mailto:${contactEmail}`}
               className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2"
               style={{ color: "var(--color-gold)", outlineColor: "var(--color-gold)" }}
             >
-              studio@canwellhouse.com
+              {contactEmail}
             </a>
             .
           </p>

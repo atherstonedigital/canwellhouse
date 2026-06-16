@@ -4,21 +4,23 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { useScrollReveal } from "@/lib/useReveal";
+import { home } from "@/lib/content";
 
 export default function Model() {
   const sectionRef = useScrollReveal<HTMLDivElement>();
+  const { model } = home;
 
   return (
     <Section ground="petrol" id="model">
       <Container>
         <div ref={sectionRef} className="reveal-scroll">
-          <Eyebrow>THE MODEL</Eyebrow>
+          <Eyebrow>{model.eyebrow}</Eyebrow>
 
           <h2
             className="mt-6 font-light"
             style={{ fontSize: "var(--text-h2)", color: "var(--color-stone)" }}
           >
-            Built to reinforce each other.
+            {model.heading}
           </h2>
 
           <div
@@ -29,18 +31,9 @@ export default function Model() {
               color: "var(--on-dark-muted)",
             }}
           >
-            <p>
-              The brands share more than an owner. Xshowhome and Canwell
-              Interiors route bespoke and full design work to Saverys. The
-              retail brands and the online brand buy from the same suppliers,
-              and Saverys&rsquo; workshops can manufacture for any of them.
-            </p>
-            <p>
-              The result is a single group that captures demand across price
-              points and channels, and keeps a customer inside it as their
-              needs grow. Someone who starts with a £40 cushion online can
-              later commission a room from the studio that makes it.
-            </p>
+            {model.paragraphs.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </Container>
