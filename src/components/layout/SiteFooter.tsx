@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+import { settings } from "@/lib/content";
 
 export default function SiteFooter() {
+  const { footer, contactEmail } = settings;
+
   return (
     <footer className="mt-auto">
       <Section ground="petrol-deep">
@@ -23,13 +26,13 @@ export default function SiteFooter() {
             className="mt-4 text-sm"
             style={{ letterSpacing: "0.18em", color: "var(--color-gold)" }}
           >
-            Interiors | Design | Retail
+            {footer.descriptor}
           </p>
 
           <div className="mt-10 space-y-2 text-sm" style={{ color: "var(--on-dark-muted)" }}>
-            <p>Canwell House Ltd is the parent company of Xshowhome, Canwell Interiors and Saverys.</p>
-            <p>studio@canwellhouse.com</p>
-            <p>&copy; 2026 Canwell House</p>
+            <p>{footer.legal}</p>
+            <p>{contactEmail}</p>
+            <p>{footer.copyright}</p>
           </div>
         </Container>
       </Section>

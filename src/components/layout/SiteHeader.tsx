@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import { settings } from "@/lib/content";
 
 export default function SiteHeader() {
   return (
@@ -28,7 +29,7 @@ export default function SiteHeader() {
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "var(--on-dark-muted)")}
         >
-          Enquiries
+          {settings.header.ctaLabel}
         </a>
       </Container>
     </header>

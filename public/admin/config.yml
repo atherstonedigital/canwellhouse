@@ -1,0 +1,111 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Edits land on a short-lived branch and open a PR for review before going live,
+# matching the brand → PR → preview → merge workflow.
+publish_mode: editorial_workflow
+
+media_folder: public/uploads
+public_folder: /uploads
+
+site_url: https://canwellhouse.com
+logo_url: https://canwellhouse.com/brand/Canwellhouse%20logo%20long%20white.png
+
+collections:
+  - name: home
+    label: Home page
+    description: Headline copy for each section of the home page.
+    files:
+      - name: home
+        label: Home page
+        file: content/home.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Body, name: body, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+              - { label: Button link, name: ctaHref, widget: string, hint: "Use mailto: for an email link" }
+          - label: The Group
+            name: group
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+          - label: The Model
+            name: model
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+          - label: Enquiries
+            name: enquiries
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Body, name: body, widget: text }
+
+  - name: brands
+    label: Brands
+    description: The three trading brands shown on the home page.
+    files:
+      - name: brands
+        label: Brands
+        file: content/brands.json
+        fields:
+          - { label: Eyebrow, name: eyebrow, widget: string }
+          - label: Brands
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Index, name: index, widget: string, hint: "e.g. 01" }
+              - { label: Tier, name: tier, widget: string, hint: "e.g. RETAIL · ONLINE" }
+              - { label: Name, name: name, widget: string }
+              - { label: Website, name: url, widget: string }
+              - { label: Logo, name: logo, widget: image }
+              - { label: Logo width (px), name: logoWidth, widget: number, value_type: int }
+              - { label: Logo height (px), name: logoHeight, widget: number, value_type: int }
+              - { label: Logo size classes, name: logoClass, widget: string, hint: "Tailwind height, e.g. h-7 sm:h-8" }
+              - { label: Descriptor, name: descriptor, widget: text }
+
+  - name: settings
+    label: Settings
+    description: Site-wide details and SEO.
+    files:
+      - name: settings
+        label: Settings
+        file: content/settings.json
+        fields:
+          - { label: Contact email, name: contactEmail, widget: string }
+          - label: Header
+            name: header
+            widget: object
+            fields:
+              - { label: Navigation button label, name: ctaLabel, widget: string }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Descriptor line, name: descriptor, widget: string }
+              - { label: Legal line, name: legal, widget: text }
+              - { label: Copyright line, name: copyright, widget: string }
+          - label: SEO
+            name: seo
+            widget: object
+            fields:
+              - { label: Page title, name: title, widget: string }
+              - { label: Meta description, name: description, widget: text }

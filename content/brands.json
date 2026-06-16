@@ -1,0 +1,38 @@
+{
+  "eyebrow": "THE BRANDS",
+  "items": [
+    {
+      "index": "01",
+      "tier": "RETAIL · ONLINE",
+      "name": "Xshowhome",
+      "url": "https://xshowhome.com/",
+      "logo": "/brand/xshowhome-horizontal.png",
+      "logoWidth": 4128,
+      "logoHeight": 1024,
+      "logoClass": "h-6 sm:h-7",
+      "descriptor": "A direct-to-consumer furniture brand selling nationally online and through its Buzzard Valley showroom. Ex-showhome pieces and premium new stock at exceptional value, rated 4.9 out of 5 across more than 120 reviews."
+    },
+    {
+      "index": "02",
+      "tier": "PREMIUM RETAIL",
+      "name": "Canwell Interiors",
+      "url": "https://canwellinteriors.com/",
+      "logo": "/brand/canwell-interiors-horizontal.png",
+      "logoWidth": 802,
+      "logoHeight": 131,
+      "logoClass": "h-7 sm:h-8",
+      "descriptor": "A curated whole-home furnishings showroom at the Cotswold Design Centre in Broadway, open seven days, with in-person design help and a considered, premium selection."
+    },
+    {
+      "index": "03",
+      "tier": "BESPOKE DESIGN",
+      "name": "Saverys",
+      "url": "https://www.saverys.co.uk/",
+      "logo": "/brand/saverys.png",
+      "logoWidth": 500,
+      "logoHeight": 250,
+      "logoClass": "h-14 sm:h-16",
+      "descriptor": "A luxury interior design studio established in 1942, with studios in Broadway, Ludlow and Chelsea. In-house hand upholstery and bespoke furniture manufacture for private residences and luxury hotels."
+    }
+  ]
+}
