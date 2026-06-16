@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[85vh] overflow-hidden">
       <Image
-        src="/brand/canwellhouse heroimage .webp"
+        src={hero.image}
         alt=""
         fill
         priority

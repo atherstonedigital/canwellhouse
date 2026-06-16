@@ -2,10 +2,11 @@
 
 import { useCallback, useId, useState } from "react";
 import Turnstile from "@/components/ui/Turnstile";
+import { home } from "@/lib/content";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-const ENQUIRY_TYPES = ["Investment", "Partnership", "Press", "Other"] as const;
+const copy = home.enquiries.form;
 
 const fieldStyle: React.CSSProperties = {
   background: "transparent",
@@ -44,7 +45,7 @@ export default function ContactForm() {
     };
 
     if (!token) {
-      setError("Please complete the verification challenge.");
+      setError(copy.verificationError);
       return;
     }
 
@@ -83,13 +84,13 @@ export default function ContactForm() {
           className="font-light"
           style={{ fontSize: "var(--text-h3)", color: "var(--color-stone)" }}
         >
-          Thank you. Your enquiry has been received.
+          {copy.successHeading}
         </p>
         <p
           className="mt-3 leading-[1.55]"
           style={{ color: "var(--on-dark-muted)" }}
         >
-          A member of the group will respond directly.
+          {copy.successBody}
         </p>
       </div>
     );
@@ -109,14 +110,14 @@ export default function ContactForm() {
         <Field
           id={`${uid}-name`}
           name="name"
-          label="Name"
+          label={copy.nameLabel}
           autoComplete="name"
           required
         />
         <Field
           id={`${uid}-email`}
           name="email"
-          label="Email"
+          label={copy.emailLabel}
           type="email"
           autoComplete="email"
           required
@@ -124,7 +125,7 @@ export default function ContactForm() {
         <Field
           id={`${uid}-organisation`}
           name="organisation"
-          label="Organisation"
+          label={copy.organisationLabel}
           autoComplete="organization"
         />
 
@@ -134,16 +135,16 @@ export default function ContactForm() {
             className="text-[length:var(--text-eyebrow)] font-medium uppercase"
             style={labelStyle}
           >
-            Enquiry type
+            {copy.enquiryTypeLabel}
           </label>
           <select
             id={`${uid}-type`}
             name="enquiry-type"
-            defaultValue={ENQUIRY_TYPES[0]}
+            defaultValue={copy.enquiryTypes[0]}
             className="border px-4 py-3 outline-none focus:border-[var(--color-gold)]"
             style={fieldStyle}
           >
-            {ENQUIRY_TYPES.map((t) => (
+            {copy.enquiryTypes.map((t) => (
               <option key={t} value={t} style={{ color: "#253336" }}>
                 {t}
               </option>
@@ -157,7 +158,7 @@ export default function ContactForm() {
             className="text-[length:var(--text-eyebrow)] font-medium uppercase"
             style={labelStyle}
           >
-            Message
+            {copy.messageLabel}
           </label>
           <textarea
             id={`${uid}-message`}
@@ -191,7 +192,7 @@ export default function ContactForm() {
               outlineColor: "var(--color-gold)",
             }}
           >
-            {status === "submitting" ? "Sending…" : "Send enquiry"}
+            {status === "submitting" ? copy.submittingLabel : copy.submitLabel}
           </button>
         </div>
       </div>

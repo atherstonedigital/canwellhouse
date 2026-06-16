@@ -1,5 +1,11 @@
 {
   "contactEmail": "studio@canwellhouse.com",
+  "logo": {
+    "src": "/brand/Canwellhouse logo long white.png",
+    "alt": "Canwell House",
+    "width": 4128,
+    "height": 1024
+  },
   "header": {
     "ctaLabel": "Enquiries"
   },

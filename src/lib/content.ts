@@ -18,12 +18,29 @@ export type Hero = {
   body: string;
   ctaLabel: string;
   ctaHref: string;
+  image: string;
+};
+
+export type ContactFormCopy = {
+  nameLabel: string;
+  emailLabel: string;
+  organisationLabel: string;
+  enquiryTypeLabel: string;
+  enquiryTypes: string[];
+  messageLabel: string;
+  submitLabel: string;
+  submittingLabel: string;
+  verificationError: string;
+  successHeading: string;
+  successBody: string;
 };
 
 export type Enquiries = {
   eyebrow: string;
   heading: string;
   body: string;
+  emailIntro: string;
+  form: ContactFormCopy;
 };
 
 export type Home = {
@@ -52,6 +69,7 @@ export type Brands = {
 
 export type Settings = {
   contactEmail: string;
+  logo: { src: string; alt: string; width: number; height: number };
   header: { ctaLabel: string };
   footer: { descriptor: string; legal: string; copyright: string };
   seo: { title: string; description: string };

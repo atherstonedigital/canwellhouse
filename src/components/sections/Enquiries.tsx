@@ -42,7 +42,7 @@ export default function Enquiries() {
             className="mt-8 text-sm leading-[1.55]"
             style={{ color: "var(--on-dark-muted)" }}
           >
-            Or email the group directly at{" "}
+            {enquiries.emailIntro}{" "}
             <a
               href={`mailto:${contactEmail}`}
               className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2"

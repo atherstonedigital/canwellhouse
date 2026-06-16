@@ -4,7 +4,8 @@
     "heading": "From a single piece to a finished space.",
     "body": "Canwell House is the parent company of three interiors businesses: Xshowhome, Canwell Interiors and Saverys. Between them they serve the market from a £20 accessory to a £250,000 commercial scheme.",
     "ctaLabel": "Contact the group",
-    "ctaHref": "mailto:studio@canwellhouse.com"
+    "ctaHref": "mailto:studio@canwellhouse.com",
+    "image": "/brand/canwellhouse heroimage .webp"
   },
   "group": {
     "eyebrow": "THE GROUP",
@@ -25,6 +26,20 @@
   "enquiries": {
     "eyebrow": "ENQUIRIES",
     "heading": "Enquiries",
-    "body": "Canwell House works with investors and partners seeking exposure to a diversified interiors group. For investment, partnership or press enquiries, contact the group directly."
+    "body": "Canwell House works with investors and partners seeking exposure to a diversified interiors group. For investment, partnership or press enquiries, contact the group directly.",
+    "emailIntro": "Or email the group directly at",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "organisationLabel": "Organisation",
+      "enquiryTypeLabel": "Enquiry type",
+      "enquiryTypes": ["Investment", "Partnership", "Press", "Other"],
+      "messageLabel": "Message",
+      "submitLabel": "Send enquiry",
+      "submittingLabel": "Sending…",
+      "verificationError": "Please complete the verification challenge.",
+      "successHeading": "Thank you. Your enquiry has been received.",
+      "successBody": "A member of the group will respond directly."
+    }
   }
 }
