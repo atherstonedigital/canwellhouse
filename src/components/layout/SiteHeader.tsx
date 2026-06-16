@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import { settings } from "@/lib/content";
 
 export default function SiteHeader() {
   return (
@@ -10,10 +11,10 @@ export default function SiteHeader() {
       <Container className="flex items-center justify-between">
         <Link href="/" aria-label="Canwell House home">
           <Image
-            src="/brand/Canwellhouse logo long white.png"
-            alt="Canwell House"
-            width={4128}
-            height={1024}
+            src={settings.logo.src}
+            alt={settings.logo.alt}
+            width={settings.logo.width}
+            height={settings.logo.height}
             priority
             className="h-8 w-auto sm:h-10"
           />
@@ -28,7 +29,7 @@ export default function SiteHeader() {
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "var(--on-dark-muted)")}
         >
-          Enquiries
+          {settings.header.ctaLabel}
         </a>
       </Container>
     </header>

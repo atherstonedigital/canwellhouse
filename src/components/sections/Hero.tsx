@@ -3,12 +3,15 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Rule from "@/components/ui/Rule";
 import GoldButton from "@/components/ui/GoldButton";
+import { home } from "@/lib/content";
 
 export default function Hero() {
+  const { hero } = home;
+
   return (
     <section className="relative min-h-[85vh] overflow-hidden">
       <Image
-        src="/brand/canwellhouse heroimage .webp"
+        src={hero.image}
         alt=""
         fill
         priority
@@ -24,7 +27,7 @@ export default function Hero() {
       <Container className="relative z-10 flex min-h-[85vh] items-center">
         <div className="max-w-2xl" style={{ paddingBlock: "var(--section-y)" }}>
           <div className="reveal-hero">
-            <Eyebrow>GROUP</Eyebrow>
+            <Eyebrow>{hero.eyebrow}</Eyebrow>
           </div>
 
           <h1
@@ -36,7 +39,7 @@ export default function Hero() {
               animationDelay: "60ms",
             }}
           >
-            From a single piece to a finished space.
+            {hero.heading}
           </h1>
 
           <div
@@ -55,19 +58,14 @@ export default function Hero() {
               animationDelay: "180ms",
             }}
           >
-            Canwell House is the parent company of three interiors
-            businesses: Xshowhome, Canwell Interiors and Saverys. Between
-            them they serve the market from a £20 accessory to a £250,000
-            commercial scheme.
+            {hero.body}
           </p>
 
           <div
             className="reveal-hero mt-10"
             style={{ animationDelay: "240ms" }}
           >
-            <GoldButton href="mailto:studio@canwellhouse.com">
-              Contact the group
-            </GoldButton>
+            <GoldButton href={hero.ctaHref}>{hero.ctaLabel}</GoldButton>
           </div>
         </div>
       </Container>

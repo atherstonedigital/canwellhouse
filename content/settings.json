@@ -1,0 +1,21 @@
+{
+  "contactEmail": "studio@canwellhouse.com",
+  "logo": {
+    "src": "/brand/Canwellhouse logo long white.png",
+    "alt": "Canwell House",
+    "width": 4128,
+    "height": 1024
+  },
+  "header": {
+    "ctaLabel": "Enquiries"
+  },
+  "footer": {
+    "descriptor": "Interiors | Design | Retail",
+    "legal": "Canwell House Ltd is the parent company of Xshowhome, Canwell Interiors and Saverys.",
+    "copyright": "© 2026 Canwell House"
+  },
+  "seo": {
+    "title": "Canwell House",
+    "description": "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke."
+  }
+}

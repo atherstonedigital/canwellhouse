@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import OrganizationSchema from "@/components/seo/OrganizationSchema";
 import GA4 from "@/components/analytics/GA4";
+import NetlifyIdentity from "@/components/cms/NetlifyIdentity";
+import { settings } from "@/lib/content";
 
 const fraunces = localFont({
   src: [
@@ -32,18 +34,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://canwellhouse.com"
   ),
-  title: "Canwell House",
-  description:
-    "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke.",
+  title: settings.seo.title,
+  description: settings.seo.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     siteName: "Canwell House",
-    title: "Canwell House",
-    description:
-      "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke.",
+    title: settings.seo.title,
+    description: settings.seo.description,
     url: "/",
     locale: "en_GB",
     images: [
@@ -59,9 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Canwell House",
-    description:
-      "Canwell House is the parent company of Xshowhome, Canwell Interiors and Saverys, a group of interiors businesses spanning value to bespoke.",
+    title: settings.seo.title,
+    description: settings.seo.description,
     images: ["/og-canwellhouse-1200x630.jpg"],
   },
   icons: {
@@ -90,6 +89,7 @@ export default function RootLayout({
         <OrganizationSchema />
         {children}
         <GA4 />
+        <NetlifyIdentity />
       </body>
     </html>
   );
