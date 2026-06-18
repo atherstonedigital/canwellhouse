@@ -10,7 +10,7 @@ media_folder: public/uploads
 public_folder: /uploads
 
 site_url: https://canwellhouse.com
-logo_url: https://canwellhouse.com/brand/Canwellhouse%20logo%20long%20white.png
+logo_url: https://canwellhouse.com/brand/House%20of%20Canwell%20logo%20long%20white.png
 
 collections:
   - name: home
