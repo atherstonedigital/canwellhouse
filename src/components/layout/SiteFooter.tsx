@@ -19,7 +19,7 @@ export default function SiteFooter() {
             alt={settings.logo.alt}
             width={settings.logo.width}
             height={settings.logo.height}
-            className="h-6 w-auto opacity-80 sm:h-8"
+            className="h-14 w-auto opacity-80 sm:h-16"
           />
 
           <p
