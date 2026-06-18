@@ -9,7 +9,7 @@ export default function SiteHeader() {
   return (
     <header style={{ paddingBlock: "1.6rem" }}>
       <Container className="flex items-center justify-between">
-        <Link href="/" aria-label="Canwell House home">
+        <Link href="/" aria-label="House of Canwell home">
           <Image
             src={settings.logo.src}
             alt={settings.logo.alt}
