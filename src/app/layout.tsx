@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Canwell House",
+    siteName: "House of Canwell",
     title: settings.seo.title,
     description: settings.seo.description,
     url: "/",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Canwell House",
+        alt: "House of Canwell",
       },
     ],
   },
