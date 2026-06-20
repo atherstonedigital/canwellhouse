@@ -4,8 +4,14 @@ import Script from "next/script";
 import { useSyncExternalStore } from "react";
 
 // Production-only allowlist. These are production hosts, never previews or localhost.
-// If the canonical host is the apex alone and www is unreachable, reduce to ["canwellhouse.com"].
-const PROD_HOSTNAMES = ["canwellhouse.com", "www.canwellhouse.com"];
+// houseofcanwell.co.uk is the primary live domain; canwellhouse.com is kept so
+// analytics keep firing if it is served directly rather than redirected.
+const PROD_HOSTNAMES = [
+  "houseofcanwell.co.uk",
+  "www.houseofcanwell.co.uk",
+  "canwellhouse.com",
+  "www.canwellhouse.com",
+];
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID;
 
 // The host is fixed for the page's lifetime, so there are no external updates.
