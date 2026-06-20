@@ -33,7 +33,7 @@ export default function Hero() {
           <h1
             className="reveal-hero mt-6 font-light"
             style={{
-              fontSize: "var(--text-display)",
+              fontSize: "var(--text-h1)",
               color: "var(--color-stone)",
               textWrap: "balance",
               animationDelay: "60ms",

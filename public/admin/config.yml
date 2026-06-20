@@ -9,8 +9,12 @@ publish_mode: editorial_workflow
 media_folder: public/uploads
 public_folder: /uploads
 
-site_url: https://canwellhouse.com
-logo_url: https://canwellhouse.com/brand/House%20of%20Canwell%20logo%20long%20white.png
+# The CMS now lives at houseofcanwell.co.uk/admin. Backend repo/branch are
+# unchanged, so this is still a single CMS — these URLs only set where the
+# editor's "live site" links and previews point.
+site_url: https://houseofcanwell.co.uk
+display_url: https://houseofcanwell.co.uk
+logo_url: https://houseofcanwell.co.uk/brand/House%20of%20Canwell%20logo%20long%20white.png
 
 collections:
   - name: home
