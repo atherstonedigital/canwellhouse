@@ -7,6 +7,7 @@ import brandsData from "../../content/brands.json";
 import settingsData from "../../content/settings.json";
 
 export type CopyBlock = {
+  visible?: boolean;
   eyebrow: string;
   heading: string;
   paragraphs: string[];

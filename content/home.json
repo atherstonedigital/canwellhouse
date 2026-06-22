@@ -8,6 +8,7 @@
     "image": "/brand/canwellhouse heroimage .webp"
   },
   "group": {
+    "visible": false,
     "eyebrow": "THE GROUP",
     "heading": "Providing a beautiful showroom retail experience in a relaxed environment for your home furnishing and interior design needs.",
     "paragraphs": [
@@ -16,6 +17,7 @@
     ]
   },
   "model": {
+    "visible": false,
     "eyebrow": "THE MODEL",
     "heading": "House of Canwell is built to expand nationally to provide its offering and expertise around the UK.",
     "paragraphs": [

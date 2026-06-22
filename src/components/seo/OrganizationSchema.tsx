@@ -16,6 +16,7 @@ const schema = {
   "@type": "Organization",
   name: "House of Canwell",
   alternateName: "Canwell House",
+  legalName: "House of Canwell Limited",
   url: SITE_URL,
   logo: `${SITE_URL}/icon-512.png`,
   description: settings.seo.description,

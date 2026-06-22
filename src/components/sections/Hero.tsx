@@ -7,6 +7,11 @@ import { home } from "@/lib/content";
 
 export default function Hero() {
   const { hero } = home;
+  // Accept a bare email address from the CMS and still render a working mailto link.
+  const ctaHref =
+    hero.ctaHref.includes("@") && !/^(mailto:|https?:|tel:)/i.test(hero.ctaHref)
+      ? `mailto:${hero.ctaHref}`
+      : hero.ctaHref;
 
   return (
     <section className="relative min-h-[85vh] overflow-hidden">
@@ -65,7 +70,7 @@ export default function Hero() {
             className="reveal-hero mt-10"
             style={{ animationDelay: "240ms" }}
           >
-            <GoldButton href={hero.ctaHref}>{hero.ctaLabel}</GoldButton>
+            <GoldButton href={ctaHref}>{hero.ctaLabel}</GoldButton>
           </div>
         </div>
       </Container>
