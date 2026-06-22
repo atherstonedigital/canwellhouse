@@ -6,6 +6,7 @@ import Brands from "@/components/sections/Brands";
 import Model from "@/components/sections/Model";
 import Enquiries from "@/components/sections/Enquiries";
 import GrainOverlay from "@/components/ui/GrainOverlay";
+import { home } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -14,9 +15,9 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <Group />
+        {home.group.visible !== false && <Group />}
         <Brands />
-        <Model />
+        {home.model.visible !== false && <Model />}
         <Enquiries />
       </main>
       <SiteFooter />

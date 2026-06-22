@@ -39,6 +39,7 @@ collections:
             name: group
             widget: object
             fields:
+              - { label: "Show this section on the site", name: visible, widget: boolean, default: true, required: false }
               - { label: Eyebrow, name: eyebrow, widget: string }
               - { label: Heading, name: heading, widget: string }
               - label: Paragraphs
@@ -49,6 +50,7 @@ collections:
             name: model
             widget: object
             fields:
+              - { label: "Show this section on the site", name: visible, widget: boolean, default: true, required: false }
               - { label: Eyebrow, name: eyebrow, widget: string }
               - { label: Heading, name: heading, widget: string }
               - label: Paragraphs
