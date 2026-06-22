@@ -16,7 +16,7 @@ export default function SiteHeader() {
             width={settings.logo.width}
             height={settings.logo.height}
             priority
-            className="h-20 w-auto sm:h-28"
+            className="h-16 w-auto sm:h-24"
           />
         </Link>
         <a
