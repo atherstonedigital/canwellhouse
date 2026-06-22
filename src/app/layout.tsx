@@ -32,7 +32,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://canwellhouse.com"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://houseofcanwell.co.uk"
   ),
   title: settings.seo.title,
   description: settings.seo.description,
