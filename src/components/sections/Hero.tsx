@@ -58,10 +58,9 @@ export default function Hero() {
           </div>
 
           <p
-            className="reveal-hero mx-auto mt-8 leading-[1.55]"
+            className="reveal-hero mt-8 leading-[1.55]"
             style={{
               fontSize: "var(--text-lead)",
-              maxWidth: "var(--measure)",
               color: "var(--on-dark-muted)",
               animationDelay: "180ms",
             }}
