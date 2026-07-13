@@ -26,11 +26,14 @@ export default function Hero() {
       <div
         aria-hidden="true"
         className="absolute inset-0"
-        style={{ background: "linear-gradient(to right, rgba(27,37,40,.88) 45%, rgba(27,37,40,.45) 100%)" }}
+        style={{ background: "linear-gradient(to bottom, rgba(27,37,40,.82), rgba(27,37,40,.68))" }}
       />
 
-      <Container className="relative z-10 flex min-h-[85vh] items-center">
-        <div className="max-w-2xl" style={{ paddingBlock: "var(--section-y)" }}>
+      <Container className="relative z-10 flex min-h-[85vh] items-center justify-center">
+        <div
+          className="w-full text-center sm:w-[72%]"
+          style={{ paddingBlock: "var(--section-y)" }}
+        >
           <div className="reveal-hero">
             <Eyebrow>{hero.eyebrow}</Eyebrow>
           </div>
@@ -48,14 +51,14 @@ export default function Hero() {
           </h1>
 
           <div
-            className="reveal-hero mt-10"
+            className="reveal-hero mt-10 flex justify-center"
             style={{ animationDelay: "120ms" }}
           >
             <Rule />
           </div>
 
           <p
-            className="reveal-hero mt-8 leading-[1.55]"
+            className="reveal-hero mx-auto mt-8 leading-[1.55]"
             style={{
               fontSize: "var(--text-lead)",
               maxWidth: "var(--measure)",
