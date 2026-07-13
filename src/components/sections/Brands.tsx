@@ -12,7 +12,7 @@ export default function Brands() {
   const { items: brands } = brandsContent;
 
   return (
-    <Section ground="stone" id="brands">
+    <Section ground="petrol" id="brands">
       <Container>
         <div ref={sectionRef} className="reveal-scroll">
           <Eyebrow>{brandsContent.eyebrow}</Eyebrow>
@@ -24,11 +24,11 @@ export default function Brands() {
                   <>
                     <div
                       className="absolute top-0 right-0 left-0 h-px sm:hidden"
-                      style={{ background: "rgba(37,51,54,.14)" }}
+                      style={{ background: "rgba(237,232,221,.14)" }}
                     />
                     <div
                       className="absolute top-0 bottom-0 left-0 hidden w-px sm:block"
-                      style={{ background: "rgba(37,51,54,.14)" }}
+                      style={{ background: "rgba(237,232,221,.14)" }}
                     />
                   </>
                 )}
@@ -69,14 +69,14 @@ export default function Brands() {
 
                   <p
                     className="mt-4 text-base leading-relaxed"
-                    style={{ color: "var(--on-light-muted)" }}
+                    style={{ color: "var(--on-dark-muted)" }}
                   >
                     {brand.descriptor}
                   </p>
 
                   <span
                     className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium uppercase"
-                    style={{ letterSpacing: "0.16em", color: "var(--on-light)" }}
+                    style={{ letterSpacing: "0.16em", color: "var(--on-dark)" }}
                   >
                     Visit site
                     <span
