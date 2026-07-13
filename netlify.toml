@@ -7,6 +7,12 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # NEXT_PUBLIC_* values are public by design: Next.js inlines them into the
+  # client bundle, so Netlify's secrets scanner will always find them in build
+  # output. The GA4 measurement ID and Turnstile site key are safe to expose.
+  # TURNSTILE_SECRET_KEY is intentionally NOT listed: the scanner must keep
+  # failing the build if that ever leaks into output.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_GA4_ID,NEXT_PUBLIC_TURNSTILE_SITE_KEY"
 
 [[headers]]
   for = "/*"
