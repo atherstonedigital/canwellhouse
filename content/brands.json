@@ -2,37 +2,37 @@
   "eyebrow": "THE BRANDS",
   "items": [
     {
-      "index": "01",
       "tier": "RETAIL · ONLINE",
-      "name": "Xshowhome",
-      "url": "https://xshowhome.com/",
       "logo": "/brand/xshowhome-horizontal-white.png",
-      "logoWidth": 4128,
-      "logoHeight": 1024,
+      "name": "Xshowhome",
       "logoClass": "h-6 sm:h-7",
-      "descriptor": "A direct-to-consumer furniture brand selling nationally online and through its Buzzard Valley showroom. Ex-showhome pieces and premium new stock at exceptional value, rated 4.9 out of 5 across more than 120 reviews."
+      "url": "https://xshowhome.com/",
+      "descriptor": "www.xshowhome.com, online nationwide delivery home furnishings, accessories and soft furnishings business.\n\n\nExshowhome, new and ex-showhome furnishings, accessories and soft furnishings showroom based on a stunning vineyard near Sutton Coldfield, Birmingham.\n",
+      "index": "01",
+      "logoHeight": 1024,
+      "logoWidth": 4128
     },
     {
-      "index": "02",
       "tier": "PREMIUM RETAIL",
-      "name": "Canwell Interiors",
-      "url": "https://canwellinteriors.com/",
       "logo": "/brand/canwell-interiors-horizontal-white.png",
-      "logoWidth": 257,
-      "logoHeight": 42,
+      "name": "Canwell Interiors",
       "logoClass": "h-7 sm:h-8",
-      "descriptor": "A curated whole-home furnishings showroom at the Cotswold Design Centre in Broadway, open seven days, with in-person design help and a considered, premium selection."
+      "url": "https://canwellinteriors.com/",
+      "descriptor": "Canwell Interiors showroom in the heart of the Cotswolds with home furnishings, accessories, carpets, curtains, upholstery and soft furnishings all without the Cotswolds price tag.",
+      "index": "02",
+      "logoHeight": 42,
+      "logoWidth": 257
     },
     {
-      "index": "03",
       "tier": "BESPOKE DESIGN",
-      "name": "Saverys",
-      "url": "https://www.saverys.co.uk/",
       "logo": "/brand/saverys-white.png",
-      "logoWidth": 1200,
-      "logoHeight": 600,
+      "name": "Saverys",
       "logoClass": "h-14 sm:h-16",
-      "descriptor": "A luxury interior design studio established in 1942, with studios in Broadway, Ludlow and Chelsea. In-house hand upholstery and bespoke furniture manufacture for private residences and luxury hotels."
+      "url": "https://www.saverys.co.uk/",
+      "descriptor": "A luxury interior design studio established in 1942, with studios in Broadway, Ludlow and Chelsea. In-house hand upholstery and bespoke furniture manufacture for private residences and luxury hotels.\n",
+      "index": "03",
+      "logoHeight": 600,
+      "logoWidth": 1200
     }
   ]
 }
