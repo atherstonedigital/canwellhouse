@@ -3,7 +3,7 @@
   "items": [
     {
       "tier": "RETAIL · ONLINE",
-      "logo": "/brand/xshowhome-horizontal.png",
+      "logo": "/brand/xshowhome-horizontal-white.png",
       "name": "Xshowhome",
       "logoClass": "h-6 sm:h-7",
       "url": "https://xshowhome.com/",
@@ -14,25 +14,25 @@
     },
     {
       "tier": "PREMIUM RETAIL",
-      "logo": "/brand/canwell-interiors-horizontal.png",
+      "logo": "/brand/canwell-interiors-horizontal-white.png",
       "name": "Canwell Interiors",
       "logoClass": "h-7 sm:h-8",
       "url": "https://canwellinteriors.com/",
       "descriptor": "Canwell Interiors showroom in the heart of the Cotswolds with home furnishings, accessories, carpets, curtains, upholstery and soft furnishings all without the Cotswolds price tag.",
       "index": "02",
-      "logoHeight": 131,
-      "logoWidth": 802
+      "logoHeight": 42,
+      "logoWidth": 257
     },
     {
       "tier": "BESPOKE DESIGN",
-      "logo": "/brand/saverys.png",
+      "logo": "/brand/saverys-white.png",
       "name": "Saverys",
       "logoClass": "h-14 sm:h-16",
       "url": "https://www.saverys.co.uk/",
       "descriptor": "A luxury interior design studio established in 1942, with studios in Broadway, Ludlow and Chelsea. In-house hand upholstery and bespoke furniture manufacture for private residences and luxury hotels.\n",
       "index": "03",
-      "logoHeight": 250,
-      "logoWidth": 500
+      "logoHeight": 600,
+      "logoWidth": 1200
     }
   ]
 }

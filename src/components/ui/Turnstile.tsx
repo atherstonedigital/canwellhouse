@@ -76,7 +76,7 @@ export default function Turnstile({
         style={{ color: "var(--on-dark-muted)" }}
         role="status"
       >
-        Verification is unavailable. Please email studio@canwellhouse.com
+        Verification is unavailable. Please email studio@houseofcanwell.com
         directly.
       </p>
     );

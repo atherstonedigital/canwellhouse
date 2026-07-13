@@ -99,13 +99,13 @@ export async function POST(req: NextRequest) {
     if (!forwardRes.ok) {
       console.error("Netlify form submission failed:", forwardRes.status);
       return fail(
-        "We could not submit your enquiry. Please email studio@canwellhouse.com.",
+        "We could not submit your enquiry. Please email studio@houseofcanwell.com.",
         502
       );
     }
   } catch {
     return fail(
-      "We could not submit your enquiry. Please email studio@canwellhouse.com.",
+      "We could not submit your enquiry. Please email studio@houseofcanwell.com.",
       502
     );
   }
