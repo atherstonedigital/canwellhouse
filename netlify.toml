@@ -14,6 +14,16 @@
   # failing the build if that ever leaks into output.
   SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_GA4_ID,NEXT_PUBLIC_TURNSTILE_SITE_KEY"
 
+# Basic auth on the private reports area only. Two entries because "/reports/*"
+# matches nested paths but not "/reports" itself. Must not run anywhere else.
+[[edge_functions]]
+  function = "reports-auth"
+  path = "/reports"
+
+[[edge_functions]]
+  function = "reports-auth"
+  path = "/reports/*"
+
 [[headers]]
   for = "/*"
   [headers.values]
