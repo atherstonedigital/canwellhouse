@@ -1,0 +1,403 @@
+{
+  "generatedAt": "2026-07-20T07:00:00Z",
+  "brands": {
+    "xshowhome": {
+      "label": "Xshowhome",
+      "ranges": {
+        "7d": {
+          "period": "13–19 Jul",
+          "prior": "6–12 Jul",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 8702,
+              "prior": 8408,
+              "format": "int",
+              "delta": "+3.5%",
+              "note": null
+            },
+            {
+              "key": "site_revenue",
+              "label": "Site revenue",
+              "current": 24618,
+              "prior": 22947,
+              "format": "gbp",
+              "delta": "+7.3%",
+              "note": null
+            },
+            {
+              "key": "orders",
+              "label": "Orders",
+              "current": 61,
+              "prior": 57,
+              "format": "int",
+              "delta": "+7.0%",
+              "note": null
+            },
+            {
+              "key": "conv_rate",
+              "label": "Conversion rate",
+              "current": 0.7,
+              "prior": 0.68,
+              "format": "pct",
+              "delta": "+0.02pp",
+              "note": null
+            },
+            {
+              "key": "aov",
+              "label": "Average order value",
+              "current": 404,
+              "prior": 403,
+              "format": "gbp",
+              "delta": "+0.2%",
+              "note": null
+            }
+          ]
+        },
+        "30d": {
+          "period": "20 Jun – 19 Jul",
+          "prior": "21 May – 20 Jun",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 36514,
+              "prior": 35190,
+              "format": "int",
+              "delta": "+3.8%",
+              "note": null
+            },
+            {
+              "key": "site_revenue",
+              "label": "Site revenue",
+              "current": 104882,
+              "prior": 99310,
+              "format": "gbp",
+              "delta": "+5.6%",
+              "note": null
+            },
+            {
+              "key": "orders",
+              "label": "Orders",
+              "current": 259,
+              "prior": 246,
+              "format": "int",
+              "delta": "+5.3%",
+              "note": null
+            },
+            {
+              "key": "conv_rate",
+              "label": "Conversion rate",
+              "current": 0.71,
+              "prior": 0.7,
+              "format": "pct",
+              "delta": "+0.01pp",
+              "note": null
+            },
+            {
+              "key": "aov",
+              "label": "Average order value",
+              "current": 405,
+              "prior": 404,
+              "format": "gbp",
+              "delta": "+0.2%",
+              "note": null
+            }
+          ]
+        },
+        "qtd": {
+          "period": "1–19 Jul",
+          "prior": "1–19 Apr",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 23310,
+              "prior": 24870,
+              "format": "int",
+              "delta": "-6.3%",
+              "note": null
+            },
+            {
+              "key": "site_revenue",
+              "label": "Site revenue",
+              "current": 66904,
+              "prior": 71322,
+              "format": "gbp",
+              "delta": "-6.2%",
+              "note": null
+            },
+            {
+              "key": "orders",
+              "label": "Orders",
+              "current": 165,
+              "prior": 177,
+              "format": "int",
+              "delta": "-6.8%",
+              "note": null
+            },
+            {
+              "key": "conv_rate",
+              "label": "Conversion rate",
+              "current": 0.71,
+              "prior": 0.71,
+              "format": "pct",
+              "delta": "0.00pp",
+              "note": null
+            },
+            {
+              "key": "aov",
+              "label": "Average order value",
+              "current": 405,
+              "prior": 403,
+              "format": "gbp",
+              "delta": "+0.5%",
+              "note": null
+            }
+          ]
+        }
+      }
+    },
+    "canwell": {
+      "label": "Canwell Interiors",
+      "ranges": {
+        "7d": {
+          "period": "13–19 Jul",
+          "prior": "6–12 Jul",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 1246,
+              "prior": 1188,
+              "format": "int",
+              "delta": "+4.9%",
+              "note": null
+            },
+            {
+              "key": "enquiries",
+              "label": "Enquiries",
+              "current": 17,
+              "prior": 13,
+              "format": "int",
+              "delta": "+30.8%",
+              "note": null
+            },
+            {
+              "key": "canwell_till_mtd",
+              "label": "Till revenue MTD",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting till figure. Enter via /reports/entry."
+            }
+          ]
+        },
+        "30d": {
+          "period": "20 Jun – 19 Jul",
+          "prior": "21 May – 20 Jun",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 5330,
+              "prior": 5122,
+              "format": "int",
+              "delta": "+4.1%",
+              "note": null
+            },
+            {
+              "key": "enquiries",
+              "label": "Enquiries",
+              "current": 64,
+              "prior": 59,
+              "format": "int",
+              "delta": "+8.5%",
+              "note": null
+            },
+            {
+              "key": "canwell_till_mtd",
+              "label": "Till revenue MTD",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting till figure. Enter via /reports/entry."
+            }
+          ]
+        },
+        "qtd": {
+          "period": "1–19 Jul",
+          "prior": "1–19 Apr",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 3396,
+              "prior": 3610,
+              "format": "int",
+              "delta": "-5.9%",
+              "note": null
+            },
+            {
+              "key": "enquiries",
+              "label": "Enquiries",
+              "current": 41,
+              "prior": 44,
+              "format": "int",
+              "delta": "-6.8%",
+              "note": null
+            },
+            {
+              "key": "canwell_till_mtd",
+              "label": "Till revenue MTD",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting till figure. Enter via /reports/entry."
+            }
+          ]
+        }
+      }
+    },
+    "saverys": {
+      "label": "Saverys",
+      "ranges": {
+        "7d": {
+          "period": "13–19 Jul",
+          "prior": "6–12 Jul",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 842,
+              "prior": 811,
+              "format": "int",
+              "delta": "+3.8%",
+              "note": null
+            },
+            {
+              "key": "enquiries",
+              "label": "Enquiries",
+              "current": 9,
+              "prior": 11,
+              "format": "int",
+              "delta": "-18.2%",
+              "note": null
+            },
+            {
+              "key": "saverys_ludlow",
+              "label": "Ludlow week",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting Ludlow figure. Enter via /reports/entry."
+            },
+            {
+              "key": "saverys_broadway",
+              "label": "Broadway week",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting Broadway figure. Enter via /reports/entry."
+            }
+          ]
+        },
+        "30d": {
+          "period": "20 Jun – 19 Jul",
+          "prior": "21 May – 20 Jun",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 3588,
+              "prior": 3472,
+              "format": "int",
+              "delta": "+3.3%",
+              "note": null
+            },
+            {
+              "key": "enquiries",
+              "label": "Enquiries",
+              "current": 42,
+              "prior": 38,
+              "format": "int",
+              "delta": "+10.5%",
+              "note": null
+            },
+            {
+              "key": "saverys_ludlow",
+              "label": "Ludlow week",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting Ludlow figure. Enter via /reports/entry."
+            },
+            {
+              "key": "saverys_broadway",
+              "label": "Broadway week",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting Broadway figure. Enter via /reports/entry."
+            }
+          ]
+        },
+        "qtd": {
+          "period": "1–19 Jul",
+          "prior": "1–19 Apr",
+          "metrics": [
+            {
+              "key": "site_sessions",
+              "label": "Site sessions",
+              "current": 2290,
+              "prior": 2404,
+              "format": "int",
+              "delta": "-4.7%",
+              "note": null
+            },
+            {
+              "key": "enquiries",
+              "label": "Enquiries",
+              "current": 27,
+              "prior": 29,
+              "format": "int",
+              "delta": "-6.9%",
+              "note": null
+            },
+            {
+              "key": "saverys_ludlow",
+              "label": "Ludlow week",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting Ludlow figure. Enter via /reports/entry."
+            },
+            {
+              "key": "saverys_broadway",
+              "label": "Broadway week",
+              "current": null,
+              "prior": null,
+              "format": "gbp",
+              "delta": null,
+              "note": "Awaiting Broadway figure. Enter via /reports/entry."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "manual": {
+    "canwellTillMtd": { "value": null, "note": "Entered via /reports/entry" },
+    "saverysLudlow": { "value": null },
+    "saverysBroadway": { "value": null }
+  }
+}
