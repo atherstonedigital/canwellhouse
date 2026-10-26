@@ -3,7 +3,7 @@ import { brands, settings } from "@/lib/content";
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://houseofcanwell.co.uk";
 
-// Organization schema for the GROUP (House of Canwell), with the three trading
+// Organization schema for the GROUP (House of Canwell), with the trading
 // brands as subOrganization. House of Canwell is the holding company and is NOT
 // Canwell Interiors Ltd; this block models the group, never the operating
 // company. alternateName keeps the prior display name ("Canwell House") for

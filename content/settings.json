@@ -2,20 +2,22 @@
   "contactEmail": "studio@houseofcanwell.com",
   "logo": {
     "src": "/brand/house of canwell long logo.png",
-    "alt": "House of Canwell",
+    "alt": "House of Canwell — Interiors, Home Furnishings, Retail",
     "width": 1000,
     "height": 300
   },
   "header": {
-    "ctaLabel": "Enquiries"
+    "brandsLabel": "Our brands",
+    "placesLabel": "Our locations",
+    "ctaLabel": "Make an enquiry"
   },
   "footer": {
-    "descriptor": "Interiors | Design | Retail",
+    "descriptor": "Furniture. Interiors. Retail.",
     "legal": "House of Canwell Limited is the collective trading style of Xshowhome Limited, Canwell Interiors Cotswolds Limited, Lyndsey Savery Interior Design Limited and Lyndsey Savery Interior Design (Ludlow) Limited.",
-    "copyright": "© 2026 House of Canwell Limited"
+    "copyright": "© House of Canwell 2026"
   },
   "seo": {
-    "title": "House of Canwell",
-    "description": "House of Canwell Limited is the collective trading style of Xshowhome Limited, Canwell Interiors Cotswolds Limited, Lyndsey Savery Interior Design Limited and Lyndsey Savery Interior Design (Ludlow) Limited."
+    "title": "House of Canwell | Furniture, Interiors & Retail",
+    "description": "Discover Xshowhome, Canwell Interiors, Saverys of Broadway and Ludlow, and The Cotswold Workroom. Furniture, interior design and bespoke soft furnishings."
   }
 }

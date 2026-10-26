@@ -1,38 +1,60 @@
 {
-  "eyebrow": "THE BRANDS",
+  "eyebrow": "Explore the collection",
+  "heading": "Four brands. Find your inspiration.",
   "items": [
     {
-      "tier": "RETAIL · ONLINE",
-      "logo": "/brand/xshowhome-horizontal-white.png",
-      "name": "Xshowhome",
-      "logoClass": "h-6 sm:h-7",
-      "url": "https://xshowhome.com/",
-      "descriptor": "www.xshowhome.com, online nationwide delivery home furnishings, accessories and soft furnishings business.\n\n\nExshowhome, new and ex-showhome furnishings, accessories and soft furnishings showroom based on a stunning vineyard near Sutton Coldfield, Birmingham.\n",
       "index": "01",
+      "tier": "Showhome furniture",
+      "name": "Xshowhome",
+      "url": "https://xshowhome.com/",
+      "logo": "/brand/xshowhome-horizontal-white.png",
+      "logoWidth": 4128,
       "logoHeight": 1024,
-      "logoWidth": 4128
+      "logoClass": "max-h-12",
+      "panel": "ink",
+      "descriptor": "Showhome and ex-showhome furniture, available in store and online, based in North Birmingham.",
+      "ctaLabel": "Explore Xshowhome"
     },
     {
-      "tier": "PREMIUM RETAIL",
-      "logo": "/brand/canwell-interiors-horizontal-white.png",
-      "name": "Canwell Interiors",
-      "logoClass": "h-7 sm:h-8",
-      "url": "https://canwellinteriors.com/",
-      "descriptor": "Canwell Interiors showroom in the heart of the Cotswolds with home furnishings, accessories, carpets, curtains, upholstery and soft furnishings all without the Cotswolds price tag.",
       "index": "02",
+      "tier": "Curated interiors",
+      "name": "Canwell Interiors",
+      "url": "https://canwellinteriors.com/",
+      "logo": "/brand/canwell-interiors-horizontal-white.png",
+      "logoWidth": 257,
       "logoHeight": 42,
-      "logoWidth": 257
+      "logoClass": "max-h-9",
+      "panel": "ink",
+      "descriptor": "Curated collections of beautiful furniture and home interiors in the heart of the Cotswolds.",
+      "ctaLabel": "Explore Canwell Interiors"
     },
     {
-      "tier": "BESPOKE DESIGN",
-      "logo": "/brand/saverys-white.png",
-      "name": "Saverys",
-      "logoClass": "h-14 sm:h-16",
-      "url": "https://www.saverys.co.uk/",
-      "descriptor": "A luxury interior design studio established in 1942, with studios in Broadway, Ludlow and Chelsea. In-house hand upholstery and bespoke furniture manufacture for private residences and luxury hotels.\n",
       "index": "03",
+      "tier": "Interior design",
+      "name": "Saverys of Broadway and Ludlow",
+      "url": "https://www.saverys.co.uk/",
+      "logo": "/brand/saverys-white.png",
+      "logoWidth": 1200,
       "logoHeight": 600,
-      "logoWidth": 1200
+      "logoClass": "max-h-[4.5rem]",
+      "panel": "ink",
+      "caption": "Of Broadway and Ludlow",
+      "descriptor": "Interior design services, with a showroom displaying one of the largest selections of fabrics in the heart of the Cotswolds.",
+      "ctaLabel": "Explore Saverys"
+    },
+    {
+      "index": "04",
+      "tier": "Traditional craftsmanship",
+      "name": "The Cotswold Workroom",
+      "url": "https://thecotswoldworkroom.co.uk/",
+      "logo": "/brand/cotswold-workroom-emblem.png",
+      "logoWidth": 245,
+      "logoHeight": 120,
+      "logoClass": "max-h-16",
+      "panel": "paper",
+      "logoText": "The Cotswold\nWorkroom",
+      "descriptor": "Traditional craftsmanship creating beautiful curtains, blinds, soft furnishings and upholstery.",
+      "ctaLabel": "Explore The Cotswold Workroom"
     }
   ]
 }

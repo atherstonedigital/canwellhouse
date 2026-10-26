@@ -1,52 +1,51 @@
 "use client";
 
+import { useId, useState } from "react";
 import Container from "@/components/ui/Container";
-import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
+import Lines from "@/components/ui/Lines";
 import ContactForm from "@/components/ui/ContactForm";
-import { useScrollReveal } from "@/lib/useReveal";
 import { home, settings } from "@/lib/content";
 
 export default function Enquiries() {
-  const sectionRef = useScrollReveal<HTMLDivElement>();
   const { enquiries } = home;
   const { contactEmail } = settings;
+  const formId = useId();
+  const [open, setOpen] = useState(false);
 
   return (
-    <Section ground="petrol" id="enquiries">
-      <Container>
-        <div ref={sectionRef} className="reveal-scroll">
-          <Eyebrow>{enquiries.eyebrow}</Eyebrow>
-
-          <h2
-            className="mt-6 font-light"
-            style={{ fontSize: "var(--text-h2)", color: "var(--color-stone)" }}
-          >
-            {enquiries.heading}
+    <section
+      id="enquiries"
+      className="scroll-mt-6 bg-ink py-10 text-paper sm:py-12"
+    >
+      <Container className="flex flex-wrap items-center justify-between gap-8">
+        <div>
+          <Eyebrow className="mb-4 text-[#d3bf91]">{enquiries.eyebrow}</Eyebrow>
+          <h2 className="text-[length:var(--text-h2-sm)]">
+            <Lines text={enquiries.heading} />
           </h2>
-
-          <p
-            className="mt-6 leading-[1.55]"
-            style={{
-              fontSize: "var(--text-lead)",
-              maxWidth: "var(--measure)",
-              color: "var(--on-dark-muted)",
-            }}
-          >
-            {enquiries.body}
+          <p className="mt-5 text-[0.75rem] text-[#cbd1c6]">
+            <Lines text={enquiries.body} />
           </p>
+        </div>
 
-          <ContactForm />
+        <button
+          type="button"
+          className="btn-light"
+          aria-expanded={open}
+          aria-controls={formId}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {enquiries.openLabel} <span aria-hidden="true">↗</span>
+        </button>
 
-          <p
-            className="mt-8 text-sm leading-[1.55]"
-            style={{ color: "var(--on-dark-muted)" }}
-          >
+        <div id={formId} hidden={!open} className="basis-full">
+          <ContactForm autoFocus={open} />
+          <p className="mt-6 text-[0.75rem] text-[#cbd1c6]">
             {enquiries.emailIntro}{" "}
             <a
               href={`mailto:${contactEmail}`}
-              className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2"
-              style={{ color: "var(--color-gold)", outlineColor: "var(--color-gold)" }}
+              className="underline underline-offset-4 hover:text-accent-soft"
             >
               {contactEmail}
             </a>
@@ -54,6 +53,6 @@ export default function Enquiries() {
           </p>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

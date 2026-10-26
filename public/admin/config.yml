@@ -19,7 +19,7 @@ logo_url: https://houseofcanwell.co.uk/brand/House%20of%20Canwell%20logo%20long%
 collections:
   - name: home
     label: Home page
-    description: Headline copy for each section of the home page.
+    description: Copy for each section of the home page. A line break inside a heading breaks the line on the site.
     files:
       - name: home
         label: Home page
@@ -30,83 +30,95 @@ collections:
             widget: object
             fields:
               - { label: Eyebrow, name: eyebrow, widget: string }
-              - { label: Heading, name: heading, widget: string }
+              - { label: Heading, name: heading, widget: text }
               - { label: Body, name: body, widget: text }
-              - { label: Button label, name: ctaLabel, widget: string }
-              - { label: Button link, name: ctaHref, widget: string, hint: "Use mailto: for an email link" }
+              - { label: Primary button label, name: primaryCtaLabel, widget: string }
+              - { label: Primary button link, name: primaryCtaHref, widget: string, hint: "Use #brands, #places or #enquiries to jump down the page, or mailto: for an email link" }
+              - { label: Secondary link label, name: secondaryCtaLabel, widget: string }
+              - { label: Secondary link, name: secondaryCtaHref, widget: string }
               - { label: Background image, name: image, widget: image }
-          - label: The Group
-            name: group
+              - { label: Background image description, name: imageAlt, widget: string }
+              - { label: Tagline (bottom of hero), name: tagline, widget: string }
+          - label: Introduction
+            name: intro
             widget: object
             fields:
-              - { label: "Show this section on the site", name: visible, widget: boolean, default: true, required: false }
               - { label: Eyebrow, name: eyebrow, widget: string }
-              - { label: Heading, name: heading, widget: string }
-              - label: Paragraphs
-                name: paragraphs
-                widget: list
-                field: { label: Paragraph, name: paragraph, widget: text }
-          - label: The Model
-            name: model
+              - { label: Heading, name: heading, widget: text }
+              - { label: Body, name: body, widget: text }
+          - label: Our locations
+            name: places
             widget: object
             fields:
-              - { label: "Show this section on the site", name: visible, widget: boolean, default: true, required: false }
               - { label: Eyebrow, name: eyebrow, widget: string }
-              - { label: Heading, name: heading, widget: string }
-              - label: Paragraphs
-                name: paragraphs
+              - { label: Heading, name: heading, widget: text }
+              - { label: Body, name: body, widget: text }
+              - label: Locations
+                name: locations
                 widget: list
-                field: { label: Paragraph, name: paragraph, widget: text }
+                summary: "{{fields.area}}"
+                fields:
+                  - { label: Area, name: area, widget: string, hint: "e.g. North Birmingham" }
+                  - { label: Brands there, name: brands, widget: text, hint: "One line per row, e.g. Canwell Interiors · Saverys" }
           - label: Enquiries
             name: enquiries
             widget: object
             fields:
               - { label: Eyebrow, name: eyebrow, widget: string }
-              - { label: Heading, name: heading, widget: string }
+              - { label: Heading, name: heading, widget: text }
               - { label: Body, name: body, widget: text }
-              - { label: Email intro line, name: emailIntro, widget: string, hint: "Text before the email address, e.g. 'Or email the group directly at'" }
+              - { label: Open form button label, name: openLabel, widget: string }
+              - { label: Email intro line, name: emailIntro, widget: string, hint: "Text before the email address, e.g. 'Or email us directly at'" }
               - label: Contact form
                 name: form
                 widget: object
                 fields:
                   - { label: Name field label, name: nameLabel, widget: string }
+                  - { label: Name placeholder, name: namePlaceholder, widget: string }
                   - { label: Email field label, name: emailLabel, widget: string }
-                  - { label: Organisation field label, name: organisationLabel, widget: string }
-                  - { label: Enquiry type field label, name: enquiryTypeLabel, widget: string }
-                  - label: Enquiry type options
+                  - { label: Email placeholder, name: emailPlaceholder, widget: string }
+                  - { label: Interest field label, name: enquiryTypeLabel, widget: string }
+                  - label: Interest options
                     name: enquiryTypes
                     widget: list
                     field: { label: Option, name: option, widget: string }
                   - { label: Message field label, name: messageLabel, widget: string }
+                  - { label: Message placeholder, name: messagePlaceholder, widget: string }
                   - { label: Submit button label, name: submitLabel, widget: string }
                   - { label: Submitting button label, name: submittingLabel, widget: string }
+                  - { label: Privacy note, name: privacyNote, widget: string }
                   - { label: Verification error, name: verificationError, widget: string }
                   - { label: Success heading, name: successHeading, widget: string }
                   - { label: Success body, name: successBody, widget: text }
 
   - name: brands
     label: Brands
-    description: The three trading brands shown on the home page.
+    description: The trading brands shown on the home page.
     files:
       - name: brands
         label: Brands
         file: content/brands.json
         fields:
           - { label: Eyebrow, name: eyebrow, widget: string }
+          - { label: Heading, name: heading, widget: string }
           - label: Brands
             name: items
             widget: list
             summary: "{{fields.name}}"
             fields:
               - { label: Index, name: index, widget: string, hint: "e.g. 01" }
-              - { label: Tier, name: tier, widget: string, hint: "e.g. RETAIL · ONLINE" }
+              - { label: Tier, name: tier, widget: string, hint: "Shown beside the index, e.g. Showhome furniture" }
               - { label: Name, name: name, widget: string }
               - { label: Website, name: url, widget: string }
               - { label: Logo, name: logo, widget: image }
               - { label: Logo width (px), name: logoWidth, widget: number, value_type: int }
               - { label: Logo height (px), name: logoHeight, widget: number, value_type: int }
-              - { label: Logo size classes, name: logoClass, widget: string, hint: "Tailwind height, e.g. h-7 sm:h-8" }
+              - { label: Logo size classes, name: logoClass, widget: string, hint: "Tailwind max height, e.g. max-h-12" }
+              - { label: Logo panel, name: panel, widget: select, options: [ink, paper], default: ink, required: false, hint: "Dark ink for white logos; paper for dark artwork" }
+              - { label: Caption under logo, name: caption, widget: string, required: false, hint: "e.g. Of Broadway and Ludlow" }
+              - { label: Name set in type beside the logo, name: logoText, widget: text, required: false, hint: "Only for an emblem with no wordmark" }
               - { label: Descriptor, name: descriptor, widget: text }
+              - { label: Link label, name: ctaLabel, widget: string, hint: "e.g. Explore Xshowhome" }
 
   - name: settings
     label: Settings
@@ -130,7 +142,9 @@ collections:
             name: header
             widget: object
             fields:
-              - { label: Navigation button label, name: ctaLabel, widget: string }
+              - { label: Brands link label, name: brandsLabel, widget: string }
+              - { label: Locations link label, name: placesLabel, widget: string }
+              - { label: Enquiry link label, name: ctaLabel, widget: string }
           - label: Footer
             name: footer
             widget: object

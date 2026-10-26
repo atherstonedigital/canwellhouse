@@ -1,6 +1,6 @@
 # Canwell House — Master Brief
 
-Canwell House (`canwellhouse.com`) is the holding company above three trading brands: Canwell Interiors, Saverys and Xshowhome. This repo is the group's top-level site. It sells nothing; the trading brands carry all commercial and search weight.
+House of Canwell (`houseofcanwell.co.uk`, formerly Canwell House at `canwellhouse.com`) is the holding company above four trading brands: Xshowhome, Canwell Interiors, Saverys and The Cotswold Workroom. This repo is the group's top-level site. It sells nothing; the trading brands carry all commercial and search weight.
 
 ## Purpose
 Establish Canwell House as a credible parent that makes the group legible to investors and reassures customers the brands belong to one substantial business. Investor credibility leads; customer confidence is secondary.
@@ -14,13 +14,14 @@ Corporate-premium-investor. Measured, declarative, understated confidence, third
 ## Stack
 Next.js 15 (App Router) · Tailwind v4 · Decap CMS · Netlify · GitHub · GA4.
 
-## Brand tokens (locked — from the redesigned logo)
-- Petrol (primary dark ground): #253336
-- Petrol deep (footer / depth): #1B2528
-- Gold (accent only — hairlines, eyebrows, numerals, button edges): #C6974E
-- Stone (light contrast ground + text on dark): #F4F1EC
-- Display: Fraunces. Body/UI: Inter.
-- Descriptor line: Interiors | Design | Retail
+## Brand tokens (from Gary's October 2026 redesign; supersede the earlier petrol/gold set)
+- Ink (dark ground: header, hero, enquiry band, footer, logo panels): #293b36
+- Paper (page ground): #f7f4ed · Paper warm (light buttons): #f4efe4
+- Card tints (brand grid): #eeeee4 and #e6e8dd
+- Accent (hairlines, nav underline): #bda775 · Accent soft (eyebrows on ink): #dfcca2
+- Display: Cormorant Garamond (400). Body/UI: DM Sans (400, 500). Both via next/font/google.
+- Footer descriptor line: Furniture. Interiors. Retail.
+- Four brands on the group site: Xshowhome, Canwell Interiors, Saverys of Broadway and Ludlow, The Cotswold Workroom.
 
 ## Non-negotiables (fail silently in production if skipped)
 - Validated schema types only; validate every block before shipping.

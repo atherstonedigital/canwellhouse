@@ -1,75 +1,117 @@
 @import "tailwindcss";
 
+/* Palette and type from Gary's October 2026 redesign of houseofcanwell.co.uk. */
 @theme {
-  --color-petrol: #253336;
-  --color-petrol-deep: #1B2528;
-  --color-gold: #C6974E;
-  --color-stone: #F4F1EC;
+  --color-ink: #293b36;
+  --color-ink-deep: #131e1a;
+  --color-paper: #f7f4ed;
+  --color-paper-warm: #f4efe4;
+  --color-card: #eeeee4;
+  --color-card-alt: #e6e8dd;
+  --color-accent: #bda775;
+  --color-accent-soft: #dfcca2;
+  --color-muted: #60675e;
+  --color-line: #d9d9cc;
 
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
 
-  --text-eyebrow: 0.72rem;
-  --text-lead: clamp(1.05rem, 0.85rem + 0.7vw, 1.3rem);
-  --text-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
-  --text-h2: clamp(1.7rem, 1.1rem + 2.4vw, 2.9rem);
-  --text-h1: clamp(2rem, 1.3rem + 3vw, 3.4rem);
-  --text-display: clamp(2.6rem, 1.4rem + 5vw, 5.2rem);
+  --text-h1: clamp(2.5rem, 6vw, 4.25rem);
+  --text-h2: clamp(2rem, 3.8vw, 2.75rem);
+  --text-h2-sm: clamp(1.9rem, 3.6vw, 2.6rem);
 
-  --section-y: clamp(4.5rem, 10vh, 8rem);
-  --gutter: clamp(1.5rem, 6vw, 7rem);
-  --measure: 40ch;
+  --gutter: 6%;
 }
 
-:root {
-  --on-dark: #EDE8DD;
-  --on-dark-muted: color-mix(in srgb, #EDE8DD 66%, transparent);
-  --on-light: #253336;
-  --on-light-muted: color-mix(in srgb, #253336 66%, transparent);
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  color-scheme: light;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-html { background: var(--color-petrol); color: var(--on-dark); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-body { font-family: var(--font-inter), system-ui, sans-serif; overflow-x: hidden; }
-h1, h2, h3 { font-family: var(--font-fraunces), Georgia, serif; font-weight: 300; letter-spacing: -0.015em; line-height: 1.05; }
-
-/* Load reveal */
-@keyframes reveal-up {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  overflow-x: hidden;
 }
 
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
 }
 
-.reveal-hero {
-  opacity: 0;
-  animation: reveal-up 0.8s var(--ease-out) forwards;
+/* Small-caps tracking line used above every section heading. */
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
-.reveal-scroll {
-  opacity: 0;
+/* Square, light button with the trailing glyph pushed to the far edge. */
+.btn-light {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.875rem 1.375rem;
+  background: var(--color-paper-warm);
+  color: var(--color-ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 0;
+  border-radius: 0;
+  transition: background-color 180ms ease;
 }
 
-.reveal-scroll.is-visible {
-  animation: fade-up 0.8s var(--ease-out) forwards;
+.btn-light:hover {
+  background: #ffffff;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .gold-btn:hover {
-    background-color: var(--color-gold);
-    color: var(--color-petrol);
+.btn-light:focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.text-link {
+  font-size: 0.75rem;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid #a7aa9d;
+}
+
+/* Form controls on the ink ground. */
+.field {
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem;
+  border: 1px solid #8d968b;
+  border-radius: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+.field:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+@media (max-width: 600px) {
+  /* Stops iOS zooming into inputs on focus. */
+  .field {
+    font-size: 1rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  @keyframes reveal-up {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-
-  @keyframes fade-up {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  html {
+    scroll-behavior: auto;
   }
 }
