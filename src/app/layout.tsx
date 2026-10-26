@@ -1,32 +1,23 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import OrganizationSchema from "@/components/seo/OrganizationSchema";
 import GA4 from "@/components/analytics/GA4";
 import NetlifyIdentity from "@/components/cms/NetlifyIdentity";
 import { settings } from "@/lib/content";
 
-const fraunces = localFont({
-  src: [
-    {
-      path: "../../brand/fonts/Fraunces_72pt-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../brand/fonts/Fraunces_72pt_Soft-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-  ],
-  variable: "--font-fraunces",
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -83,7 +74,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <OrganizationSchema />

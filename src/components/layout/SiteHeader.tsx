@@ -1,37 +1,41 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import Container from "@/components/ui/Container";
 import { settings } from "@/lib/content";
 
 export default function SiteHeader() {
+  const { header, logo } = settings;
+
   return (
-    <header style={{ paddingBlock: "1.6rem" }}>
-      <Container className="relative flex items-center justify-center">
-        <Link href="/" aria-label="House of Canwell home">
+    <header className="bg-ink text-paper">
+      <div className="mx-auto flex max-w-[1400px] items-start justify-between gap-6 px-[5%] py-6 sm:items-center sm:py-7">
+        <Link href="/" aria-label="House of Canwell home" className="shrink-0">
           <Image
-            src={settings.logo.src}
-            alt={settings.logo.alt}
-            width={settings.logo.width}
-            height={settings.logo.height}
+            src={logo.src}
+            alt={logo.alt}
+            width={logo.width}
+            height={logo.height}
             priority
-            className="h-16 w-auto sm:h-24"
+            className="block h-auto w-[190px] sm:w-[230px]"
           />
         </Link>
-        <a
-          href="#enquiries"
-          className="absolute right-0 text-sm uppercase transition-colors duration-200"
-          style={{
-            letterSpacing: "0.14em",
-            color: "var(--on-dark-muted)",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--on-dark-muted)")}
+        <nav
+          aria-label="Main navigation"
+          className="flex flex-col items-end gap-2 text-[0.75rem] sm:flex-row sm:items-center sm:gap-7"
         >
-          {settings.header.ctaLabel}
-        </a>
-      </Container>
+          <a href="#brands" className="hidden hover:text-accent-soft sm:inline">
+            {header.brandsLabel}
+          </a>
+          <a href="#places" className="hidden hover:text-accent-soft sm:inline">
+            {header.placesLabel}
+          </a>
+          <a
+            href="#enquiries"
+            className="border-b border-accent py-2.5 hover:text-accent-soft"
+          >
+            {header.ctaLabel} <span className="ml-3" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }

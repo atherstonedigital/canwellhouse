@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Turnstile from "@/components/ui/Turnstile";
 import { home } from "@/lib/content";
 
@@ -8,36 +8,27 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 const copy = home.enquiries.form;
 
-const fieldStyle: React.CSSProperties = {
-  background: "transparent",
-  color: "var(--color-stone)",
-  borderColor: "color-mix(in srgb, var(--color-stone) 28%, transparent)",
-};
-
-const labelStyle: React.CSSProperties = {
-  letterSpacing: "0.16em",
-  color: "var(--on-dark-muted)",
-};
-
-export default function ContactForm() {
+export default function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
   const uid = useId();
+  const firstField = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const [token, setToken] = useState("");
 
   const handleToken = useCallback((value: string) => setToken(value), []);
 
+  useEffect(() => {
+    if (autoFocus) firstField.current?.focus();
+  }, [autoFocus]);
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
 
-    const form = event.currentTarget;
-    const fd = new FormData(form);
-
+    const fd = new FormData(event.currentTarget);
     const payload = {
       name: String(fd.get("name") ?? ""),
       email: String(fd.get("email") ?? ""),
-      organisation: String(fd.get("organisation") ?? ""),
       enquiryType: String(fd.get("enquiry-type") ?? ""),
       message: String(fd.get("message") ?? ""),
       botField: String(fd.get("bot-field") ?? ""),
@@ -64,176 +55,114 @@ export default function ContactForm() {
     } catch (err) {
       setStatus("error");
       setError(
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again."
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
       );
     }
   }
 
   if (status === "success") {
     return (
-      <div
-        role="status"
-        className="mt-10 border p-8"
-        style={{
-          borderColor: "color-mix(in srgb, var(--color-gold) 50%, transparent)",
-        }}
-      >
-        <p
-          className="font-light"
-          style={{ fontSize: "var(--text-h3)", color: "var(--color-stone)" }}
-        >
-          {copy.successHeading}
-        </p>
-        <p
-          className="mt-3 leading-[1.55]"
-          style={{ color: "var(--on-dark-muted)" }}
-        >
-          {copy.successBody}
-        </p>
+      <div role="status" className="border-t border-[#758075] pt-6">
+        <p className="font-display text-[1.75rem] leading-tight">{copy.successHeading}</p>
+        <p className="mt-2 text-[0.8125rem] text-[#cbd1c6]">{copy.successBody}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-10 max-w-[34rem]" noValidate>
+    <form
+      onSubmit={handleSubmit}
+      noValidate
+      className="grid gap-4 border-t border-[#758075] pt-6 sm:grid-cols-2"
+    >
       {/* Honeypot: visually hidden, off the tab order. */}
-      <div aria-hidden="true" className="hidden">
+      <p hidden aria-hidden="true">
         <label>
-          Do not fill this in
+          Leave this empty
           <input name="bot-field" tabIndex={-1} autoComplete="off" />
         </label>
-      </div>
+      </p>
 
-      <div className="grid gap-6">
-        <Field
+      <label htmlFor={`${uid}-name`} className="grid gap-1.5 text-[0.75rem]">
+        {copy.nameLabel}
+        <input
+          ref={firstField}
           id={`${uid}-name`}
           name="name"
-          label={copy.nameLabel}
           autoComplete="name"
           required
+          placeholder={copy.namePlaceholder}
+          className="field"
         />
-        <Field
+      </label>
+
+      <label htmlFor={`${uid}-email`} className="grid gap-1.5 text-[0.75rem]">
+        {copy.emailLabel}
+        <input
           id={`${uid}-email`}
-          name="email"
-          label={copy.emailLabel}
           type="email"
+          name="email"
           autoComplete="email"
           required
+          placeholder={copy.emailPlaceholder}
+          className="field"
         />
-        <Field
-          id={`${uid}-organisation`}
-          name="organisation"
-          label={copy.organisationLabel}
-          autoComplete="organization"
-        />
-
-        <div className="grid gap-2">
-          <label
-            htmlFor={`${uid}-type`}
-            className="text-[length:var(--text-eyebrow)] font-medium uppercase"
-            style={labelStyle}
-          >
-            {copy.enquiryTypeLabel}
-          </label>
-          <select
-            id={`${uid}-type`}
-            name="enquiry-type"
-            defaultValue={copy.enquiryTypes[0]}
-            className="border px-4 py-3 outline-none focus:border-[var(--color-gold)]"
-            style={fieldStyle}
-          >
-            {copy.enquiryTypes.map((t) => (
-              <option key={t} value={t} style={{ color: "#253336" }}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="grid gap-2">
-          <label
-            htmlFor={`${uid}-message`}
-            className="text-[length:var(--text-eyebrow)] font-medium uppercase"
-            style={labelStyle}
-          >
-            {copy.messageLabel}
-          </label>
-          <textarea
-            id={`${uid}-message`}
-            name="message"
-            rows={5}
-            required
-            className="border px-4 py-3 outline-none focus:border-[var(--color-gold)] resize-y"
-            style={fieldStyle}
-          />
-        </div>
-
-        <Turnstile onToken={handleToken} />
-
-        {error && (
-          <p role="alert" className="text-sm" style={{ color: "#E0A57A" }}>
-            {error}
-          </p>
-        )}
-
-        <div>
-          <button
-            type="submit"
-            disabled={status === "submitting"}
-            className="gold-btn inline-block border px-[1.8rem] py-[0.95rem] text-sm uppercase transition-[background-color,color] focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100"
-            style={{
-              letterSpacing: "0.16em",
-              borderColor: "var(--color-gold)",
-              color: "var(--color-gold)",
-              transitionDuration: "220ms",
-              transitionTimingFunction: "var(--ease-out)",
-              outlineColor: "var(--color-gold)",
-            }}
-          >
-            {status === "submitting" ? copy.submittingLabel : copy.submitLabel}
-          </button>
-        </div>
-      </div>
-    </form>
-  );
-}
-
-function Field({
-  id,
-  name,
-  label,
-  type = "text",
-  autoComplete,
-  required = false,
-}: {
-  id: string;
-  name: string;
-  label: string;
-  type?: string;
-  autoComplete?: string;
-  required?: boolean;
-}) {
-  return (
-    <div className="grid gap-2">
-      <label
-        htmlFor={id}
-        className="text-[length:var(--text-eyebrow)] font-medium uppercase"
-        style={labelStyle}
-      >
-        {label}
-        {required && <span aria-hidden="true"> *</span>}
       </label>
-      <input
-        id={id}
-        name={name}
-        type={type}
-        autoComplete={autoComplete}
-        required={required}
-        className="border px-4 py-3 outline-none focus:border-[var(--color-gold)]"
-        style={fieldStyle}
-      />
-    </div>
+
+      <label htmlFor={`${uid}-type`} className="grid gap-1.5 text-[0.75rem]">
+        {copy.enquiryTypeLabel}
+        <select
+          id={`${uid}-type`}
+          name="enquiry-type"
+          defaultValue={copy.enquiryTypes[0]}
+          className="field"
+        >
+          {copy.enquiryTypes.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label
+        htmlFor={`${uid}-message`}
+        className="grid gap-1.5 text-[0.75rem] sm:col-span-2"
+      >
+        {copy.messageLabel}
+        <textarea
+          id={`${uid}-message`}
+          name="message"
+          rows={3}
+          required
+          placeholder={copy.messagePlaceholder}
+          className="field resize-y"
+        />
+      </label>
+
+      <div className="sm:col-span-2">
+        <Turnstile onToken={handleToken} />
+      </div>
+
+      {error && (
+        <p role="alert" className="text-[0.75rem] text-[#e9b98f] sm:col-span-2">
+          {error}
+        </p>
+      )}
+
+      <div>
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="btn-light disabled:opacity-60"
+        >
+          {status === "submitting" ? copy.submittingLabel : copy.submitLabel}{" "}
+          <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+      <p aria-live="polite" className="self-center text-[0.75rem] text-[#cbd1c6]">
+        {copy.privacyNote}
+      </p>
+    </form>
   );
 }

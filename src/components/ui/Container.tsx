@@ -8,10 +8,7 @@ export default function Container({
   className?: string;
 }) {
   return (
-    <div
-      className={`mx-auto w-full max-w-[1240px] ${className}`}
-      style={{ paddingInline: "var(--gutter)" }}
-    >
+    <div className={`mx-auto w-full max-w-[1400px] px-[var(--gutter)] ${className}`}>
       {children}
     </div>
   );

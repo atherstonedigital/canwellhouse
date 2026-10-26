@@ -8,7 +8,6 @@ const SITEVERIFY_URL =
 type ContactPayload = {
   name?: string;
   email?: string;
-  organisation?: string;
   enquiryType?: string;
   message?: string;
   token?: string;
@@ -31,7 +30,6 @@ export async function POST(req: NextRequest) {
 
   const name = data.name?.trim() ?? "";
   const email = data.email?.trim() ?? "";
-  const organisation = data.organisation?.trim() ?? "";
   const enquiryType = data.enquiryType?.trim() ?? "";
   const message = data.message?.trim() ?? "";
   const token = data.token ?? "";
@@ -87,7 +85,6 @@ export async function POST(req: NextRequest) {
       "form-name": FORM_NAME,
       name,
       email,
-      organisation,
       "enquiry-type": enquiryType,
       message,
     });
